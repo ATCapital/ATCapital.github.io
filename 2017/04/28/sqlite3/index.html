@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="查询当前数据库|.databases查询当前表|.tables查询表的详细信息|.schema创建数据库|cmd下$sqlite3 DatabaseName.db附加数据库|ATTACH DATABASE &amp;#39;DatabaseName&amp;#39; As &amp;#39;Alias-Name&amp;#39;;分离数据库|DETACH DATABASE &amp;#39;Alias-Name&amp;#39;; 创建表|C">
+<meta name="description" content="功能 代码     查询当前数据库 .databases   查询当前表 .tables   查询表的详细信息 .schema   创建数据库 cmd下$sqlite3 DatabaseName.db   附加数据库 ATTACH DATABASE &amp;#39;DatabaseName&amp;#39; As &amp;#39;Alias-Name&amp;#39;;   分离数据库 DETACH DATABASE">
 <meta name="keywords" content="sqlite">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqlite3笔记">
 <meta property="og:url" content="https://suplandz.github.io/2017/04/28/sqlite3/index.html">
 <meta property="og:site_name" content="AT Capital">
-<meta property="og:description" content="查询当前数据库|.databases查询当前表|.tables查询表的详细信息|.schema创建数据库|cmd下$sqlite3 DatabaseName.db附加数据库|ATTACH DATABASE &amp;#39;DatabaseName&amp;#39; As &amp;#39;Alias-Name&amp;#39;;分离数据库|DETACH DATABASE &amp;#39;Alias-Name&amp;#39;; 创建表|C">
-<meta property="og:updated_time" content="2017-04-28T14:52:29.256Z">
+<meta property="og:description" content="功能 代码     查询当前数据库 .databases   查询当前表 .tables   查询表的详细信息 .schema   创建数据库 cmd下$sqlite3 DatabaseName.db   附加数据库 ATTACH DATABASE &amp;#39;DatabaseName&amp;#39; As &amp;#39;Alias-Name&amp;#39;;   分离数据库 DETACH DATABASE">
+<meta property="og:updated_time" content="2017-04-28T15:55:40.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqlite3笔记">
-<meta name="twitter:description" content="查询当前数据库|.databases查询当前表|.tables查询表的详细信息|.schema创建数据库|cmd下$sqlite3 DatabaseName.db附加数据库|ATTACH DATABASE &amp;#39;DatabaseName&amp;#39; As &amp;#39;Alias-Name&amp;#39;;分离数据库|DETACH DATABASE &amp;#39;Alias-Name&amp;#39;; 创建表|C">
+<meta name="twitter:description" content="功能 代码     查询当前数据库 .databases   查询当前表 .tables   查询表的详细信息 .schema   创建数据库 cmd下$sqlite3 DatabaseName.db   附加数据库 ATTACH DATABASE &amp;#39;DatabaseName&amp;#39; As &amp;#39;Alias-Name&amp;#39;;   分离数据库 DETACH DATABASE">
 
 
 
@@ -347,8 +347,60 @@
 
       
         <a id="more"></a>
-<p>查询当前数据库|<code>.databases</code><br>查询当前表|<code>.tables</code><br>查询表的详细信息|<code>.schema</code><br>创建数据库|cmd下<code>$sqlite3 DatabaseName.db</code><br>附加数据库|<code>ATTACH DATABASE &#39;DatabaseName&#39; As &#39;Alias-Name&#39;;</code><br>分离数据库|<code>DETACH DATABASE &#39;Alias-Name&#39;;</code></p>
-<p>创建表|<code>CREATE TABLE COMPANY(ID INT PRIMARY KEY NOT NULL, NAME TEXT NOT NULL);</code><br>删除表|<code>DROP TABLE TABLE_NAME;</code><br>添加数据|<code>INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (1, &#39;Paul&#39;, 32, &#39;California&#39;, 20000.00 );</code><br>添加另一个表的数据|<code>INSERT INTO T_1 [(column1, column2)] SELECT column1, column2 FROM T_2 [WHERE condition];</code><br>选择数据|<code>SELECT column1, column2 (*) FROM table_name;</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">查询当前数据库</td>
+<td style="text-align:left"><code>.databases</code></td>
+</tr>
+<tr>
+<td style="text-align:left">查询当前表</td>
+<td style="text-align:left"><code>.tables</code></td>
+</tr>
+<tr>
+<td style="text-align:left">查询表的详细信息</td>
+<td style="text-align:left"><code>.schema</code></td>
+</tr>
+<tr>
+<td style="text-align:left">创建数据库</td>
+<td style="text-align:left">cmd下<code>$sqlite3 DatabaseName.db</code></td>
+</tr>
+<tr>
+<td style="text-align:left">附加数据库</td>
+<td style="text-align:left"><code>ATTACH DATABASE &#39;DatabaseName&#39; As &#39;Alias-Name&#39;;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">分离数据库</td>
+<td style="text-align:left"><code>DETACH DATABASE &#39;Alias-Name&#39;;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">创建表</td>
+<td style="text-align:left"><code>CREATE TABLE COMPANY(ID INT PRIMARY KEY NOT NULL, NAME TEXT NOT NULL);</code></td>
+</tr>
+<tr>
+<td style="text-align:left">删除表</td>
+<td style="text-align:left"><code>DROP TABLE TABLE_NAME;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">添加数据</td>
+<td style="text-align:left"><code>INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (1, &#39;Paul&#39;, 32, &#39;California&#39;, 20000.00 );</code></td>
+</tr>
+<tr>
+<td style="text-align:left">添加另一个表的数据</td>
+<td style="text-align:left"><code>INSERT INTO T_1 [(column1, column2)] SELECT column1, column2 FROM T_2 [WHERE condition];</code></td>
+</tr>
+<tr>
+<td style="text-align:left">选择数据</td>
+<td style="text-align:left"><code>SELECT column1, column2 (*) FROM table_name;</code></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
