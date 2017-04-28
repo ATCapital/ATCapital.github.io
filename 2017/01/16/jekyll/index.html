@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="TOC{:toc}  从零教你搭博客。">
+<meta name="description" content="从零教你搭博客。">
 <meta name="keywords" content="jekyll">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello Jekyll!">
 <meta property="og:url" content="https://suplandz.github.io/2017/01/16/jekyll/index.html">
 <meta property="og:site_name" content="AT Capital">
-<meta property="og:description" content="TOC{:toc}  从零教你搭博客。">
-<meta property="og:updated_time" content="2017-04-28T11:28:37.276Z">
+<meta property="og:description" content="从零教你搭博客。">
+<meta property="og:updated_time" content="2017-04-28T14:51:04.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Jekyll!">
-<meta name="twitter:description" content="TOC{:toc}  从零教你搭博客。">
+<meta name="twitter:description" content="从零教你搭博客。">
 
 
 
@@ -346,10 +346,7 @@
       
 
       
-        <ul>
-<li>TOC<br>{:toc}</li>
-</ul>
-<p>从零教你搭博客。<br><a id="more"></a></p>
+        <p>从零教你搭博客。<br><a id="more"></a></p>
 <h2 id="部署Jekyll"><a href="#部署Jekyll" class="headerlink" title="部署Jekyll"></a>部署Jekyll</h2><ol>
 <li>安装<a href="http://rubyinstaller.org/downloads" target="_blank" rel="external">Ruby</a><br>Jekyll是使用ruby语言进行开发的，所以我们第一步需要安装ruby以及ruby相关的开发工具。安装的时候在<code>Add Ruby executables to your PATH</code>打勾。接下来安装安装<strong>相应版本的Development Kit</strong>。<br>Development Kit的安装方法：cd to it, run <code>ruby dk.rb init</code> and <code>ruby dk.rb</code> install to bind it to ruby installations in your path. 如果不成功直接 <code>ruby dk.rb -f</code></li>
 <li>安装Jekyll<br><code>gem install jekyll</code><br>成功之后<code>jekyll new blog</code>，然后<code>cd blog</code>，<code>jekyll serve</code>。打开浏览器输入网址<code>http://127.0.0.1:4000/</code>就可以看原生的Jekyll博客了！</li>
@@ -375,7 +372,7 @@ codinfox-lanyon" target="_blank" rel="external">Codinfox-lanyon主题</a></stron
 </ul>
 <h2 id="撰写博客"><a href="#撰写博客" class="headerlink" title="撰写博客"></a>撰写博客</h2><ul>
 <li><p>Jekyll识别<a href="/memo/2017/01/18/how-to-use-markdown/">markdown语法</a>，<del>MD编辑器我使用的是sublime，简洁好用</del> 使用ATOM作为MD的编辑器，control + shift + M 自动调出预览效果。<br>博文放在目录<code>_post</code>下面，按照日期-标题的命名规则新建markdown后缀的文件，打开文件后输入必要的YML信息，具体可以参考自带的示例。编辑好文章后就可以使用Git push上去了。Jekyll会自动转化相应的静态网页。</p>
-<p>Push的时候可以使用ATOM的Git Plus插件（需要先<a href="https://suplandz.github.io/memo/2017/01/20/git-command/" target="_blank" rel="external">配置Git Bash</a>），安装好之后不需要在Git Plus中修改参数，path直接用默认的git即可（可以在cmd中使用git确认是否在环境中配置成功）。在ATOM-FILE-ADD PROJECT FOLDER加入Repository，因为文件夹包含git子文件夹，atom会自动识别，随后使用control + shift + A添加文件，control + shift + X添加评论，最后鼠标点个Push即可。如果没有成功的确认下Git Bash有没有配置成功。</p>
+<p>Push的时候可以使用ATOM的Git Plus插件（需要先<a href="https://suplandz.github.io/memo/2017/01/20/git-command/">配置Git Bash</a>），安装好之后不需要在Git Plus中修改参数，path直接用默认的git即可（可以在cmd中使用git确认是否在环境中配置成功）。在ATOM-FILE-ADD PROJECT FOLDER加入Repository，因为文件夹包含git子文件夹，atom会自动识别，随后使用control + shift + A添加文件，control + shift + X添加评论，最后鼠标点个Push即可。如果没有成功的确认下Git Bash有没有配置成功。</p>
 </li>
 </ul>
 <h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><p>微信链接的图片尺寸必须大于： 300px × 300px，打入如下代码隐藏图片</p>

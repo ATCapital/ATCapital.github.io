@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="TOC{:toc}  NumPy使用笔记。">
+<meta name="description" content="NumPy使用笔记。">
 <meta name="keywords" content="numpy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NumPy库使用简介">
 <meta property="og:url" content="https://suplandz.github.io/2017/02/05/numpy/index.html">
 <meta property="og:site_name" content="AT Capital">
-<meta property="og:description" content="TOC{:toc}  NumPy使用笔记。">
-<meta property="og:updated_time" content="2017-02-15T13:00:31.669Z">
+<meta property="og:description" content="NumPy使用笔记。">
+<meta property="og:updated_time" content="2017-04-28T14:52:08.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NumPy库使用简介">
-<meta name="twitter:description" content="TOC{:toc}  NumPy使用笔记。">
+<meta name="twitter:description" content="NumPy使用笔记。">
 
 
 
@@ -346,10 +346,7 @@
       
 
       
-        <ul>
-<li>TOC<br>{:toc}</li>
-</ul>
-<p>NumPy使用笔记。</p>
+        <p>NumPy使用笔记。</p>
 <a id="more"></a>
 <p>实例化ndarray的3个函数方法array，zeros和empty。</p>
 <h2 id="numpy-array"><a href="#numpy-array" class="headerlink" title="numpy.array"></a>numpy.array</h2><p>|创建数组<br>|<code>numpy.array(object, dtype=None, copy=True, order=&#39;K&#39;, subok=False, ndmin=0)</code><br>|<code>&gt;&gt;&gt; np.array([1, 2, 3], dtype=complex)</code><br><code>array([ 1.+0.j,  2.+0.j,  3.+0.j])</code></p>
@@ -358,7 +355,7 @@
 <h2 id="numpy-ndarray类"><a href="#numpy-ndarray类" class="headerlink" title="numpy.ndarray类"></a>numpy.ndarray类</h2><p>ndarray可以进行向量化运算，例如<code>x **2</code>或者<code>np.sqrt(x)</code><br>可以使用<code>x[row][column]</code>查值</p>
 <p><strong>常用属性</strong>（使用时不加括号）：</p>
 <p>Attributes     |描述                     |例子<br>T             |转置类似<code>.transpose()</code>    |<code>x.T</code><br>shape         |显示数组维度             |<code>x.shape</code></p>
-<p><strong>常用方法</strong>：    </p>
+<p><strong>常用方法</strong>：</p>
 <p>Methods         |描述                 |例子<br>sum(axis, dtype)|按照axis, dtype求和     |<br>cumsum(axis, dtype)|按照axis, dtype累计求和|<br>std(axis, dtype)|按照axis, dtype求标准差|</p>
 <h2 id="numpy-dtype类"><a href="#numpy-dtype类" class="headerlink" title="numpy.dtype类"></a>numpy.dtype类</h2><p>描述数组的存储类型，所有的数据类型是这个类的实例化。<a href="https://docs.scipy.org/doc/numpy/user/basics.types.html#data-types" target="_blank" rel="external">详细参数</a></p>
 <p>|数据类型|<code>int8 float_</code><br>|使用方式|<code>x = np.float32(1.0)</code><br><code>d = np.dtype(int)</code><br>|结构数组|<code>dt = np.dtype([(&#39;Name&#39;, &#39;S10&#39;), [(&#39;Age&#39;, &#39;i4&#39;)])</code><br><code>s = np.array([(&#39;Smith&#39;, 45), (&#39;Jones&#39;, 53)], dtype = dt)</code></p>

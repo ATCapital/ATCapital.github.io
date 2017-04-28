@@ -347,10 +347,7 @@
 
       
         
-          <ul>
-<li>TOC<br>{:toc}</li>
-</ul>
-<p>主要记录Git的安装配置和基本语法，最后更新2017/01/20。</p>
+          <p>主要记录Git的安装配置和基本语法，最后更新2017/01/20。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/01/20/git-command/#more" rel="contents">
@@ -496,16 +493,46 @@
 
       
         
-          <ul>
-<li>TOC<br>{:toc}</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/01/18/how-to-use-markdown/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <a id="more"></a>
+<p>如果你想要依赖 Markdown 来插入 <code>&lt;br /&gt;</code> 标签的话，在插入处先按入两个以上的空格然后回车。</p>
+<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>Sublime + 一款配色主题即可。主题文件放在<code>Sublime/Preferences/Browse Packages</code><br>或者ATOM + 自带的preview（control + shift + M）。</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 这是 H1</span></div><div class="line"><span class="section"># 这是 H1 #</span></div><div class="line"><span class="section">## 这是 H2 ##</span></div><div class="line"><span class="section">### 这是 H3 #####</span></div></pre></td></tr></table></figure>
+<h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="quote">&gt; ## 这是一个标题。</span></div><div class="line"><span class="quote">&gt;</span></div><div class="line">&gt; 1.   这是第一行列表项。</div><div class="line"><span class="quote">&gt; 2.   这是第二行列表项。</span></div><div class="line"><span class="quote">&gt;</span></div><div class="line">&gt; &gt; 给出一些例子代码：</div><div class="line"><span class="quote">&gt;</span></div><div class="line">&gt;     return shell_exec("echo $input | $markdown_script");</div></pre></td></tr></table></figure>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">*   </span>Red</div><div class="line"><span class="bullet">+   </span>Green</div><div class="line"><span class="bullet">-   </span>Blue</div></pre></td></tr></table></figure>
+<p>要让列表看起来更漂亮，你可以把内容用固定的缩进整理好</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">*  </span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div><div class="line">   Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,</div><div class="line">   viverra nec, fringilla in, laoreet vitae, risus.</div></pre></td></tr></table></figure>
+<p>有些情况下项目列表很可能会不小心产生</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1986. </span>What a great season.</div></pre></td></tr></table></figure>
+<p>要避免这样的状况，你可以在句点前面加上反斜杠。</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1986\. What a great season.</div></pre></td></tr></table></figure>
+<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>只要简单地缩进 4 个空格或是 1 个制表符就可以</p>
+<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">* </span><span class="bullet">* *</span></div><div class="line"><span class="emphasis">***</span></div><div class="line"><span class="strong">*****</span></div><div class="line"><span class="section">- - -</span></div><div class="line">---------------------------------------</div></pre></td></tr></table></figure>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><h3 id="行内式"><a href="#行内式" class="headerlink" title="行内式"></a>行内式</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">This is [<span class="string">an example</span>](<span class="link">http://example.com/ "Optional Title"</span>) inline link.</div><div class="line">[<span class="string">This link</span>](<span class="link">http://example.net/</span>) has no title attribute.</div></pre></td></tr></table></figure>
+<p>如果你是要链接到同样主机的资源，你可以使用相对路径：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">See my [<span class="string">About</span>](<span class="link">/about/</span>) page for details.</div></pre></td></tr></table></figure>
+<h3 id="参考式"><a href="#参考式" class="headerlink" title="参考式"></a>参考式</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">This is [<span class="string">an example</span>][<span class="symbol">id</span>] reference-style link. id 不区分大小写</div></pre></td></tr></table></figure>
+<p>接着，在文件的任意处，你可以把这个标记的链接内容定义出来：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="symbol">id</span>]: <span class="link">http://example.com/  "Optional Title Here"</span></div><div class="line">[<span class="symbol">id</span>]: <span class="link">http://example.com/  </span></div><div class="line"><span class="code">      "Optional Title Here"</span></div></pre></td></tr></table></figure>
+<p>隐式链接标记可以省略id</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="string">Google</span>][<span class="symbol"></span>]</div><div class="line">[<span class="symbol">Google</span>]: <span class="link">http://google.com/</span></div></pre></td></tr></table></figure>
+<p>也可以采用参考文献式</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">I get 10 times more traffic from [Google] [1] than from</div><div class="line">[Yahoo] [2] or [MSN] [3].</div><div class="line">[<span class="symbol">1</span>]: <span class="link">http://google.com/        "Google"</span></div><div class="line">[<span class="symbol">2</span>]: <span class="link">http://search.yahoo.com/  "Yahoo Search"</span></div><div class="line">[<span class="symbol">3</span>]: <span class="link">http://search.msn.com/    "MSN Search"</span></div></pre></td></tr></table></figure>
+<p><code>&lt;http://example.com/&gt;</code> 尖括号包起来会自动把它转成链接。</p>
+<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>Markdown 使用星号（<em>）作为标记强调字词的符号，被 </em> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 * 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="emphasis">*single asterisks*</span>  # <span class="xml"><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span> 斜体</div><div class="line"><span class="strong">**double asterisks**</span>  # <span class="xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span> 加粗</div></pre></td></tr></table></figure>
+<p>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\<span class="emphasis">*this text is surrounded by literal asterisks\*</span></div></pre></td></tr></table></figure>
+<p>删除线，使用~~</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~~需删除的内容~~</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>如果要标记一小段行内代码，你可以用反引号把它包起来（`），例如：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Use the <span class="code">`printf()`</span> function.</div></pre></td></tr></table></figure>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h3 id="行内式-1"><a href="#行内式-1" class="headerlink" title="行内式"></a>行内式</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![<span class="string">Alt text</span>](<span class="link">/path/to/img.jpg</span>)</div><div class="line">![<span class="string">Alt text</span>](<span class="link">/path/to/img.jpg "Optional title"</span>)</div></pre></td></tr></table></figure>
+<h3 id="参考式-1"><a href="#参考式-1" class="headerlink" title="参考式"></a>参考式</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![<span class="string">Alt text</span>][<span class="symbol">id</span>]</div><div class="line">[<span class="symbol">id</span>]: <span class="link">url/to/image  "Optional title attribute"</span></div></pre></td></tr></table></figure>
+<p>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的<code>&lt;img&gt;</code>标签。</p>
+<p><a href="http://wowubuntu.com/markdown/index.html#blockquote" target="_blank" rel="external">参考资料</a></p>
+
+          
         
       
     </div>
@@ -646,12 +673,9 @@
         
           
             <ul>
-<li><p>TOC<br>{:toc}</p>
-</li>
-<li><p><a href="http://blog.csdn.net/zhang1027963459/article/details/50478340" target="_blank" rel="external">Git代码</a>    </p>
-</li>
-<li><a href="https://bigballon.github.io/" target="_blank" rel="external">爬虫相关</a>    </li>
-<li><a href="http://www.jianshu.com/u/03a93cbd0eae" target="_blank" rel="external">爬虫相关 漫画</a>    </li>
+<li><a href="http://blog.csdn.net/zhang1027963459/article/details/50478340" target="_blank" rel="external">Git代码</a></li>
+<li><a href="https://bigballon.github.io/" target="_blank" rel="external">爬虫相关</a></li>
+<li><a href="http://www.jianshu.com/u/03a93cbd0eae" target="_blank" rel="external">爬虫相关 漫画</a></li>
 </ul>
 
           
@@ -793,10 +817,7 @@
 
       
         
-          <ul>
-<li>TOC<br>{:toc}</li>
-</ul>
-<p>从零教你搭博客。<br>
+          <p>从零教你搭博客。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/01/16/jekyll/#more" rel="contents">
