@@ -1,0 +1,741 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="pandas," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="TOC{:toc}  Pandas使用笔记。参考资料">
+<meta name="keywords" content="pandas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas库使用简介">
+<meta property="og:url" content="https://suplandz.github.io/2017/01/25/pandas/index.html">
+<meta property="og:site_name" content="AT Capital">
+<meta property="og:description" content="TOC{:toc}  Pandas使用笔记。参考资料">
+<meta property="og:updated_time" content="2017-02-16T13:14:22.664Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pandas库使用简介">
+<meta name="twitter:description" content="TOC{:toc}  Pandas使用笔记。参考资料">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://suplandz.github.io/2017/01/25/pandas/"/>
+
+
+
+
+
+  <title>Pandas库使用简介 | AT Capital</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AT Capital</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://suplandz.github.io/2017/01/25/pandas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Fangnan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AT Capital">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Pandas库使用简介
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-25T16:00:00+08:00">
+                2017-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>TOC<br>{:toc}</li>
+</ul>
+<p>Pandas使用笔记。<a href="http://pandas.pydata.org/pandas-docs/stable/api.html" target="_blank" rel="external">参考资料</a></p>
+<a id="more"></a>
+<h1 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h1><h2 id="pandas-read-csv"><a href="#pandas-read-csv" class="headerlink" title="pandas.read_csv"></a>pandas.read_csv</h2><p>|读取csv文件</p>
+<p>参数|格式|描述<br>filepath/buffer|str|<code>./data/table.csv</code><br>sep|str, default ‘,’|原始数据间分隔符<br>header|int|原始数据标题行的位置<br>index_col|int|原始数据index位置<br>parse_dates|boolean or int|解析索引列或者其他列的日期<br>dayfirst|boolean, default False|DD/MM格式用来解析日期格式</p>
+<h1 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h1><h2 id="pandas-date-range"><a href="#pandas-date-range" class="headerlink" title="pandas.date_range"></a>pandas.date_range</h2><p>使用<code>pandas.date_range</code>生成<code>DatetimeIndex</code>对象<br><code>pandas.date_range(start=None, end=None, periods=None, freq=&#39;D&#39;, tz=None, normalize=False, name=None, closed=None, **kwargs)[source]</code></p>
+<p>参数|格式|描述<br>start|string/datetime-like|日期左界<br>end|string/datetime-like|日期右界<br>periods|integer/None|期数<br>freq|string|可以使用5D（5天）<a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases" target="_blank" rel="external">更多参数</a><br>tz|string/None|时区<br>normalize|bool|将start，end规划为午夜<br>name|string|结果索引名称</p>
+<p>可以使用<code>df.index</code>将日期赋值给索引<br><code>np.array(df)</code>将<code>DateFrame</code>转回<code>ndarray</code>对象</p>
+<h2 id="pandas-to-datetime"><a href="#pandas-to-datetime" class="headerlink" title="pandas.to_datetime"></a>pandas.to_datetime</h2><p><a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html?highlight=to_datetime#pandas.to_datetime" target="_blank" rel="external">参考</a></p>
+<p>|将参数转成时间格式<br>|<code>pandas.to_datetime(*args, **kwargs)</code><br>|<code>pd.to_datetime([&#39;2009/07/31&#39;, &#39;asd&#39;], errors=&#39;raise&#39;)</code><br><code>ValueError: Unknown string format</code></p>
+<h1 id="DataFrame类"><a href="#DataFrame类" class="headerlink" title="DataFrame类"></a>DataFrame类</h1><p>|创建<code>dataframe</code>对象。<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" target="_blank" rel="external">doc</a><br>|<code>class pandas.DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)</code><br>|<code>df = DataFrame(data=d, index=index)</code></p>
+<p>参数|格式|描述<br>data|ndarray/list/dict|如果使用dict需要加上index，dict代表colums对应关系。如果是ndarray会自动添加索引值。<br>index|ndarray/list<br>columns|ndarray/list</p>
+<p>可以使用<code>df[&#39;columns&#39;][index]</code>查值。</p>
+<p><strong>常用属性</strong>（使用时不加括号）：</p>
+<p>Attributes     |描述                 |例子<br>index         |查看/修改index         |<code>df.index</code><br>values         |查看/修改values         |<code>df.values</code><br>columns     |查看/修改columns     |<code>df.columns</code><br>ix             |基于index查看/修改值    |<code>df.ix[[&#39;a&#39;, &#39;b&#39;]] or df.ix[df.index[1:3]]</code></p>
+<p><strong>常用函数</strong>：    </p>
+<p>Methods|描述|例子<br>sum(axis)|求和行或列|<code>df.sum(axis=0)  # equals df.sum()</code><br>cumsum(axis)|累计求和|<code>axis : {index (0), columns (1)}</code><br>apply|附加函数|<code>df.apply(numpy.sum, axis=1)  # equals df.sum(1)</code><br>append|添加数据|先创建新的具有index的dataframe对象<br>如果没有index：<code>df.append(df2, ignore_index=True)</code><br>join(data, how) |合并数据|how默认left向左合并 outer并集<br>mean(axis)均值|<code>axis : {index (0), columns (1)}</code><br>std(axis)|标准差|<code>axis : {index (0), columns (1)}</code><br>describe|通用描述|<br>plot|matplotlib封装器|<br>max|最大值|<code>axis : {index (0), columns (1)}</code><br>size|返回元素数量|<br>groupby|分组求值，可以多列进行|<code>data.groupby([&#39;col1&#39;, &#39;col2&#39;])[&#39;col3&#39;].mean()</code><br>corr|求回归系数|<code>method : {‘pearson’, ‘kendall’, ‘spearman’}</code><br>fillna|填充缺失NaN数据(np.nan)|<code>method=&#39;ffill&#39;  # front fill 使用前面的数据填充, 避免前视问题.</code><br>rolling(window[, min_periods, freq, center, …])|求移动apply, corr, count, cov, kurt, max, mean, median, min, quantile, skew, std, sum, var|<code>df.rolling(2, win_type=&#39;blackman&#39;).sum()</code><br>比如股价低于前50天最低价入场，<code>current_price &lt; stock.rolling(window=50).min()</code><br>shift([periods, freq, axis])|数据向后移动n个index|<code>df/df.shift(1)  # 求index i/index i-1</code></p>
+<p>也可以使用NumPy通用函数：<code>np.sqrt(df)</code></p>
+<h1 id="Series类"><a href="#Series类" class="headerlink" title="Series类"></a>Series类</h1><p>DataFrame选单一列时得到Series对象，方法基本通用</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/pandas/" rel="tag"># pandas</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/02/strategy/" rel="next" title="量化常用策略">
+                <i class="fa fa-chevron-left"></i> 量化常用策略
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/22/system/" rel="prev" title="量化系统的构建">
+                量化系统的构建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Liu Fangnan" />
+          <p class="site-author-name" itemprop="name">Liu Fangnan</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#I-O"><span class="nav-number">1.</span> <span class="nav-text">I/O</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-read-csv"><span class="nav-number">1.1.</span> <span class="nav-text">pandas.read_csv</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内建函数"><span class="nav-number">2.</span> <span class="nav-text">内建函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-date-range"><span class="nav-number">2.1.</span> <span class="nav-text">pandas.date_range</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-to-datetime"><span class="nav-number">2.2.</span> <span class="nav-text">pandas.to_datetime</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DataFrame类"><span class="nav-number">3.</span> <span class="nav-text">DataFrame类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Series类"><span class="nav-number">4.</span> <span class="nav-text">Series类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu Fangnan</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

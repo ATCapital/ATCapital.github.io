@@ -1,0 +1,737 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="TOC{:toc}  Python基本库查阅参考资料">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Python Standard Library">
+<meta property="og:url" content="https://suplandz.github.io/2017/02/15/python-lib/index.html">
+<meta property="og:site_name" content="AT Capital">
+<meta property="og:description" content="TOC{:toc}  Python基本库查阅参考资料">
+<meta property="og:updated_time" content="2017-02-16T05:00:12.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Python Standard Library">
+<meta name="twitter:description" content="TOC{:toc}  Python基本库查阅参考资料">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://suplandz.github.io/2017/02/15/python-lib/"/>
+
+
+
+
+
+  <title>The Python Standard Library | AT Capital</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AT Capital</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://suplandz.github.io/2017/02/15/python-lib/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liu Fangnan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AT Capital">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                The Python Standard Library
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-15T12:00:00+08:00">
+                2017-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>TOC<br>{:toc}</li>
+</ul>
+<p>Python基本库查阅<br><a href="https://docs.python.org/2/library/index.html" target="_blank" rel="external">参考资料</a></p>
+<a id="more"></a>
+<h2 id="1-内建函数"><a href="#1-内建函数" class="headerlink" title="1.内建函数"></a>1.内建函数</h2><p>|abs(x)|返回绝对值|<br>|chr(i)||<br>|zip([iterable, …])|类似map(None, iterable, iterable)，返回包含tuple的list<br>|map(function, iterable, …)|将funtion运用到iterable中，如果有多个参数就多加个iterable</p>
+<h2 id="2-内置类型"><a href="#2-内置类型" class="headerlink" title="2. 内置类型"></a>2. 内置类型</h2><h3 id="2-8-Dict"><a href="#2-8-Dict" class="headerlink" title="2.8 Dict"></a>2.8 Dict</h3><p>|<code>keys()</code>|返回key的list<br>|<code>items()</code>|返回(key, value)的list  </p>
+<h2 id="3-String模块"><a href="#3-String模块" class="headerlink" title="3. String模块"></a>3. String模块</h2><h2 id="4-Data模块"><a href="#4-Data模块" class="headerlink" title="4. Data模块"></a>4. Data模块</h2><h2 id="5-数学模块"><a href="#5-数学模块" class="headerlink" title="5. 数学模块"></a>5. 数学模块</h2><h3 id="5-6-random"><a href="#5-6-random" class="headerlink" title="5.6 random"></a>5.6 random</h3><p>生成假随机数，很多方法numpy也有。</p>
+<p>|<code>random.seed(a=None)</code>|类似以撒的seed，产生随机数顺序一样|<br>|<code>random.uniform(a, b)</code>|返回随机数 [a,b]，ab位置可换<br>|<code>random.randint(a, b)</code>|返回随机整数a &lt;= N &lt;= b|<br>|<code>random.choice(seq)</code>|随机返回seq的一个值，空则<code>IndexError</code><br>|<code>random.random()</code>|返回 [0,1)<br>|<code>random.gauss(mu, sigma)</code>|高斯分布又叫正态分布，稍比<code>normalvariate</code>快<br>|<code>random.normalvariate(mu, sigma)</code>|正态分布同上</p>
+<h2 id="6-文件目录访问"><a href="#6-文件目录访问" class="headerlink" title="6. 文件目录访问"></a>6. 文件目录访问</h2><h2 id="7-数据存储"><a href="#7-数据存储" class="headerlink" title="7. 数据存储"></a>7. 数据存储</h2><h3 id="7-1-pickle"><a href="#7-1-pickle" class="headerlink" title="7.1 pickle"></a>7.1 pickle</h3><p>此模块是Python内置用于数据存储的库，把变量从内存存入到文件的过程。Pickle有通过C优化后的兄弟库叫cPickle，官方说法快1000倍，所以使用时这样引用:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">import</span> cPickle <span class="keyword">as</span> pickle</div><div class="line"><span class="keyword">except</span> ImportError:</div><div class="line">    <span class="keyword">import</span> pickle</div></pre></td></tr></table></figure>
+<ul>
+<li><p>录入数据</p>
+<p>|<code>pickle.dump(obj, file[, protocol])</code><br>|导出到文件</p>
+<p>|<code>pickle.dumps(obj[, protocol])</code><br>|导出为字符串</p>
+<p>|Protocol|描述<br>|0|original ASCII 默认值<br>|1|old binary format<br>|2|more efficient<br>|negative|HIGHEST_PROTOCOL will be used</p>
+</li>
+<li><p>读取数据</p>
+<p>|<code>pickle.load(file)</code><br>|从文件读取数据</p>
+<p>|<code>pickle.loads(string)</code><br>|从字符串读取数据</p>
+<p>Pickle 每次序列化生成的字符串有独立头尾，按照先进先出（FIFO）的顺序保存，可以建个字典存储读取。pickle.load() 只会读取一个完整的结果，所以你只需要在 load 一次之后再 load 一次，就能读到第二次序列化的数据。如果不知道文件里有多少 pickle 对象，可以在 while 循环中反复 load 文件对象，直到抛出异常为止。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/15/python-OS/" rel="next" title="python OS">
+                <i class="fa fa-chevron-left"></i> python OS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/09/yahoo-finance/" rel="prev" title="从雅虎财经获取数据说起">
+                从雅虎财经获取数据说起 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Liu Fangnan" />
+          <p class="site-author-name" itemprop="name">Liu Fangnan</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-内建函数"><span class="nav-number">1.</span> <span class="nav-text">1.内建函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-内置类型"><span class="nav-number">2.</span> <span class="nav-text">2. 内置类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-Dict"><span class="nav-number">2.1.</span> <span class="nav-text">2.8 Dict</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-String模块"><span class="nav-number">3.</span> <span class="nav-text">3. String模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Data模块"><span class="nav-number">4.</span> <span class="nav-text">4. Data模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-数学模块"><span class="nav-number">5.</span> <span class="nav-text">5. 数学模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-random"><span class="nav-number">5.1.</span> <span class="nav-text">5.6 random</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-文件目录访问"><span class="nav-number">6.</span> <span class="nav-text">6. 文件目录访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-数据存储"><span class="nav-number">7.</span> <span class="nav-text">7. 数据存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-pickle"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 pickle</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu Fangnan</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
