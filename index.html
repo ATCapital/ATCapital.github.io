@@ -417,64 +417,14 @@
 
       
         
-          
-            <a id="more"></a>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">功能</th>
-<th style="text-align:left">代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">查询当前数据库</td>
-<td style="text-align:left"><code>.databases</code></td>
-</tr>
-<tr>
-<td style="text-align:left">查询当前表</td>
-<td style="text-align:left"><code>.tables</code></td>
-</tr>
-<tr>
-<td style="text-align:left">查询表的详细信息</td>
-<td style="text-align:left"><code>.schema</code></td>
-</tr>
-<tr>
-<td style="text-align:left">创建数据库</td>
-<td style="text-align:left">cmd下<code>$sqlite3 DatabaseName.db</code></td>
-</tr>
-<tr>
-<td style="text-align:left">附加数据库</td>
-<td style="text-align:left"><code>ATTACH DATABASE &#39;DatabaseName&#39; As &#39;Alias-Name&#39;;</code></td>
-</tr>
-<tr>
-<td style="text-align:left">分离数据库</td>
-<td style="text-align:left"><code>DETACH DATABASE &#39;Alias-Name&#39;;</code></td>
-</tr>
-<tr>
-<td style="text-align:left">创建表</td>
-<td style="text-align:left"><code>CREATE TABLE COMPANY(ID INT PRIMARY KEY NOT NULL, NAME TEXT NOT NULL);</code></td>
-</tr>
-<tr>
-<td style="text-align:left">删除表</td>
-<td style="text-align:left"><code>DROP TABLE TABLE_NAME;</code></td>
-</tr>
-<tr>
-<td style="text-align:left">添加数据</td>
-<td style="text-align:left"><code>INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (1, &#39;Paul&#39;, 32, &#39;California&#39;, 20000.00 );</code></td>
-</tr>
-<tr>
-<td style="text-align:left">添加另一个表的数据</td>
-<td style="text-align:left"><code>INSERT INTO T_1 [(column1, column2)] SELECT column1, column2 FROM T_2 [WHERE condition];</code></td>
-</tr>
-<tr>
-<td style="text-align:left">选择数据</td>
-<td style="text-align:left"><code>SELECT column1, column2 (*) FROM table_name;</code></td>
-</tr>
-</tbody>
-</table>
-
-          
+          <p>sqlite3学习笔记</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/28/sqlite3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -627,7 +577,64 @@
           
             <a id="more"></a>
 <p>Here is a list of the different modes of opening a file:</p>
-<p>|r|Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.<br>|rb|Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.<br>|r+|Opens a file for both reading and writing. The file pointer will be at the beginning of the file.<br>|rb+|Opens a file for both reading and writing in binary format. The file pointer will be at the beginning of the file.<br>|w|Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.<br>|wb|Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.<br>|w+|Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.<br>|wb+|Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.<br>|a|Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.<br>|ab|Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.<br>|a+|Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.<br>|ab+|Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</p>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r</td>
+<td>Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>Opens a file for both reading and writing. The file pointer will be at the beginning of the file.</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>Opens a file for both reading and writing in binary format. The file pointer will be at the beginning of the file.</td>
+</tr>
+<tr>
+<td>w</td>
+<td>Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</td>
+</tr>
+<tr>
+<td>a</td>
+<td>Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</td>
+</tr>
+</tbody>
+</table>
 
           
         
@@ -2658,7 +2665,7 @@ F - C - G - Am - F - G - C
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2669,7 +2676,7 @@ F - C - G - Am - F - G - C
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
