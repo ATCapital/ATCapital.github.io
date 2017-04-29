@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AT Capital</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://suplandz.github.io/"/>
+  <updated>2017-04-29T04:37:15.978Z</updated>
+  <id>https://suplandz.github.io/</id>
+  
+  <author>
+    <name>Liu Fangnan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sqlite3笔记</title>
+    <link href="https://suplandz.github.io/2017/04/28/sqlite3/"/>
+    <id>https://suplandz.github.io/2017/04/28/sqlite3/</id>
+    <published>2017-04-28T04:00:00.000Z</published>
+    <updated>2017-04-29T04:37:15.978Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">查询当前数据库</td>
+<td style="text-align:left"><code>.databases</code></td>
+</tr>
+<tr>
+<td style="text-align:left">查询当前表</td>
+<td style="text-align:left"><code>.tables</code></td>
+</tr>
+<tr>
+<td style="text-align:left">查询表的详细信息</td>
+<td style="text-align:left"><code>.schema</code></td>
+</tr>
+<tr>
+<td style="text-align:left">创建数据库</td>
+<td style="text-align:left">cmd下<code>$sqlite3 DatabaseName.db</code></td>
+</tr>
+<tr>
+<td style="text-align:left">附加数据库</td>
+<td style="text-align:left"><code>ATTACH DATABASE &#39;DatabaseName&#39; As &#39;Alias-Name&#39;;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">分离数据库</td>
+<td style="text-align:left"><code>DETACH DATABASE &#39;Alias-Name&#39;;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">创建表</td>
+<td style="text-align:left"><code>CREATE TABLE COMPANY(ID INT PRIMARY KEY NOT NULL, NAME TEXT NOT NULL);</code></td>
+</tr>
+<tr>
+<td style="text-align:left">删除表</td>
+<td style="text-align:left"><code>DROP TABLE TABLE_NAME;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">添加数据</td>
+<td style="text-align:left"><code>INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (1, &#39;Paul&#39;, 32, &#39;California&#39;, 20000.00 );</code></td>
+</tr>
+<tr>
+<td style="text-align:left">添加另一个表的数据</td>
+<td style="text-align:left"><code>INSERT INTO T_1 [(column1, column2)] SELECT column1, column2 FROM T_2 [WHERE condition];</code></td>
+</tr>
+<tr>
+<td style="text-align:left">选择数据</td>
+<td style="text-align:left"><code>SELECT column1, column2 (*) FROM table_name;</code></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;功能&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;代码&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://suplandz.github.io/categories/Python/"/>
+    
+    
+      <category term="sqlite" scheme="https://suplandz.github.io/tags/sqlite/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python OS</title>
+    <link href="https://suplandz.github.io/2017/04/15/python-OS/"/>
+    <id>https://suplandz.github.io/2017/04/15/python-OS/</id>
+    <published>2017-04-15T04:00:00.000Z</published>
+    <updated>2017-04-29T04:37:06.756Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<p>Here is a list of the different modes of opening a file:</p>
+<p>|r|Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.<br>|rb|Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.<br>|r+|Opens a file for both reading and writing. The file pointer will be at the beginning of the file.<br>|rb+|Opens a file for both reading and writing in binary format. The file pointer will be at the beginning of the file.<br>|w|Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.<br>|wb|Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.<br>|w+|Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.<br>|wb+|Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.<br>|a|Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.<br>|ab|Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.<br>|a+|Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.<br>|ab+|Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Here is a list of the different modes of opening a file:&lt;/p&gt;
+&lt;p&gt;|r|Opens a file for reading only. The file pointer is p
+    
+    </summary>
+    
+      <category term="Python" scheme="https://suplandz.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>The Python Standard Library</title>
+    <link href="https://suplandz.github.io/2017/02/15/python-lib/"/>
+    <id>https://suplandz.github.io/2017/02/15/python-lib/</id>
+    <published>2017-02-15T04:00:00.000Z</published>
+    <updated>2017-04-29T04:37:03.117Z</updated>
+    
+    <content type="html"><![CDATA[<p>Python基本库查阅<br><a href="https://docs.python.org/2/library/index.html" target="_blank" rel="external">参考资料</a></p>
+<a id="more"></a>
+<h2 id="1-内建函数"><a href="#1-内建函数" class="headerlink" title="1.内建函数"></a>1.内建函数</h2><p>|abs(x)|返回绝对值|<br>|chr(i)||<br>|zip([iterable, …])|类似map(None, iterable, iterable)，返回包含tuple的list<br>|map(function, iterable, …)|将funtion运用到iterable中，如果有多个参数就多加个iterable</p>
+<h2 id="2-内置类型"><a href="#2-内置类型" class="headerlink" title="2. 内置类型"></a>2. 内置类型</h2><h3 id="2-8-Dict"><a href="#2-8-Dict" class="headerlink" title="2.8 Dict"></a>2.8 Dict</h3><p>|<code>keys()</code>|返回key的list<br>|<code>items()</code>|返回(key, value)的list  </p>
+<h2 id="3-String模块"><a href="#3-String模块" class="headerlink" title="3. String模块"></a>3. String模块</h2><h2 id="4-Data模块"><a href="#4-Data模块" class="headerlink" title="4. Data模块"></a>4. Data模块</h2><h2 id="5-数学模块"><a href="#5-数学模块" class="headerlink" title="5. 数学模块"></a>5. 数学模块</h2><h3 id="5-6-random"><a href="#5-6-random" class="headerlink" title="5.6 random"></a>5.6 random</h3><p>生成假随机数，很多方法numpy也有。</p>
+<p>|<code>random.seed(a=None)</code>|类似以撒的seed，产生随机数顺序一样|<br>|<code>random.uniform(a, b)</code>|返回随机数 [a,b]，ab位置可换<br>|<code>random.randint(a, b)</code>|返回随机整数a &lt;= N &lt;= b|<br>|<code>random.choice(seq)</code>|随机返回seq的一个值，空则<code>IndexError</code><br>|<code>random.random()</code>|返回 [0,1)<br>|<code>random.gauss(mu, sigma)</code>|高斯分布又叫正态分布，稍比<code>normalvariate</code>快<br>|<code>random.normalvariate(mu, sigma)</code>|正态分布同上</p>
+<h2 id="6-文件目录访问"><a href="#6-文件目录访问" class="headerlink" title="6. 文件目录访问"></a>6. 文件目录访问</h2><h2 id="7-数据存储"><a href="#7-数据存储" class="headerlink" title="7. 数据存储"></a>7. 数据存储</h2><h3 id="7-1-pickle"><a href="#7-1-pickle" class="headerlink" title="7.1 pickle"></a>7.1 pickle</h3><p>此模块是Python内置用于数据存储的库，把变量从内存存入到文件的过程。Pickle有通过C优化后的兄弟库叫cPickle，官方说法快1000倍，所以使用时这样引用:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">import</span> cPickle <span class="keyword">as</span> pickle</div><div class="line"><span class="keyword">except</span> ImportError:</div><div class="line">    <span class="keyword">import</span> pickle</div></pre></td></tr></table></figure>
+<ul>
+<li><p>录入数据</p>
+<p>|<code>pickle.dump(obj, file[, protocol])</code><br>|导出到文件</p>
+<p>|<code>pickle.dumps(obj[, protocol])</code><br>|导出为字符串</p>
+<p>|Protocol|描述<br>|0|original ASCII 默认值<br>|1|old binary format<br>|2|more efficient<br>|negative|HIGHEST_PROTOCOL will be used</p>
+</li>
+<li><p>读取数据</p>
+<p>|<code>pickle.load(file)</code><br>|从文件读取数据</p>
+<p>|<code>pickle.loads(string)</code><br>|从字符串读取数据</p>
+<p>Pickle 每次序列化生成的字符串有独立头尾，按照先进先出（FIFO）的顺序保存，可以建个字典存储读取。pickle.load() 只会读取一个完整的结果，所以你只需要在 load 一次之后再 load 一次，就能读到第二次序列化的数据。如果不知道文件里有多少 pickle 对象，可以在 while 循环中反复 load 文件对象，直到抛出异常为止。</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Python基本库查阅&lt;br&gt;&lt;a href=&quot;https://docs.python.org/2/library/index.html&quot;&gt;参考资料&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://suplandz.github.io/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从雅虎财经获取数据说起</title>
+    <link href="https://suplandz.github.io/2017/02/09/yahoo-finance/"/>
+    <id>https://suplandz.github.io/2017/02/09/yahoo-finance/</id>
+    <published>2017-02-09T09:00:00.000Z</published>
+    <updated>2017-04-29T04:36:55.219Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<p>这篇主要梳理下使用<code>pandas-datareader</code>来获取财经数据进行简单分析的过程。<code>pandas-datareader</code>之前是封装在<code>pandas</code>里，但之后被移除，所以需要单独安装下<code>$ pip install pandas-datareader</code>。行情数据在<code>data</code>类下，调用方法<code>import pandas_datareader.data as web</code>。</p>
+<p><a href="https://pandas-datareader.readthedocs.io/en/latest/index.html" target="_blank" rel="external">Doc说明文档</a></p>
+<ul>
+<li><p>首先使用DataReader函数获取数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = web.DataReader(<span class="string">'600030.SS'</span>, <span class="string">'yahoo'</span>, start, end)</div></pre></td></tr></table></figure>
+</li>
+<li><p>计算对数收益率:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">df[<span class="string">'return'</span>] = np.log(df[<span class="string">'Close'</span>] / df[<span class="string">'Close'</span>].shift(<span class="number">1</span>))</div><div class="line">df[[<span class="string">'Close'</span>, <span class="string">'return'</span>]].plot(subplots=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
+<p>可以观察波动率和收盘价的关系。</p>
+</li>
+<li><p>计算移动平均值：<br>使用<a href="/python/2017/01/25/pandas/#pandasdataframerolling"><code>pd.rolling函数</code></a>创建一行新列，再绘图观察即可。具体的代码是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df[<span class="string">'21d'</span>] = df[<span class="string">'Close'</span>].rolling(windows=<span class="number">21</span>).mean()</div><div class="line">df[[<span class="string">'Close'</span>, <span class="string">'21d'</span>]].plot()</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p>实际上到这里就画出了收盘价线和移动平均线，简单的居于均线趋势分析的方法就可以在这里开始检验了，是不是很简单呢。</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;这篇主要梳理下使用&lt;code&gt;pandas-datareader&lt;/code&gt;来获取财经数据进行简单分析的过程。&lt;code&gt;pandas-datareader&lt;/code&gt;之前是封装在&lt;code&gt;pandas&lt;/code&gt;里，但之后被移除
+    
+    </summary>
+    
+      <category term="Quant" scheme="https://suplandz.github.io/categories/Quant/"/>
+    
+    
+      <category term="pandas" scheme="https://suplandz.github.io/tags/pandas/"/>
+    
+      <category term="python" scheme="https://suplandz.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>matplotlib库使用简介</title>
+    <link href="https://suplandz.github.io/2017/02/06/matplotlib/"/>
+    <id>https://suplandz.github.io/2017/02/06/matplotlib/</id>
+    <published>2017-02-06T09:00:00.000Z</published>
+    <updated>2017-04-29T04:35:41.068Z</updated>
+    
+    <content type="html"><![CDATA[<p>matplotlib使用笔记。</p>
+<a id="more"></a>
+<p>绘图函数主要在子库matplotlib.pyplot中，下面介绍的都是pyplot的函数。</p>
+<pre><code>import matplotlib.pyplot as plt
+</code></pre><h1 id="pyplot类"><a href="#pyplot类" class="headerlink" title="pyplot类"></a>pyplot类</h1><h2 id="figure函数"><a href="#figure函数" class="headerlink" title="figure函数"></a>figure函数</h2><p>|创建图层<br>|<code>matplotlib.pyplot.figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameon=True, FigureClass=&lt;class &#39;matplotlib.figure.Figure&#39;&gt;, **kwargs)</code><br>|<code>plt.figure(figsiz=(7,4))</code></p>
+<h2 id="plot函数"><a href="#plot函数" class="headerlink" title="plot函数"></a>plot函数</h2><p>|绘图，<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot" target="_blank" rel="external">线条参数，颜色参数</a><br>|<code>matplotlib.pyplot.plot(*args, **kwargs)</code><br>|<code>plot(x, y, &#39;bo&#39;)  # plot x and y using blue circle markers</code></p>
+<p>|参数|例子<br>|linewidth or lw|<code>lw=1.5</code></p>
+<h2 id="grid函数"><a href="#grid函数" class="headerlink" title="grid函数"></a>grid函数</h2><p>|显隐网格<br>|<code>matplotlib.pyplot.grid(b=None, which=&#39;major&#39;, axis=&#39;both&#39;, **kwargs)</code><br>|<code>ax.grid(True)</code><br><code>ax.grid(color=&#39;r&#39;, linestyle=&#39;-&#39;, linewidth=2)</code></p>
+<h2 id="axis函数，xlim函数，ylim函数"><a href="#axis函数，xlim函数，ylim函数" class="headerlink" title="axis函数，xlim函数，ylim函数"></a>axis函数，xlim函数，ylim函数</h2><p>|坐标轴设置<br>|<code>matplotlib.pyplot.axis(*v, **kwargs)</code><br>|<code>axis(v)  # 设置坐标极值 v = [xmin, xmax, ymin, ymax]</code><br><code>axis(&#39;off&#39;)  # 关闭</code><br><code>axis(&#39;equal&#39;)  # 等刻度</code><br><code>axis(&#39;tight&#39;)  # 边界和数据重叠</code><br><code>axis(&#39;image&#39;)  # 所有数据可见</code></p>
+<p>|设置或者获取边界<br>|<code>matplotlib.pyplot.xlim(*args, **kwargs)</code><br>|<code>xmin, xmax = xlim()  # return the current xlim</code><br><code>xlim( (xmin, xmax) )  # set the xlim to xmin, xmax</code><br><code>xlim( xmin, xmax )  # set the xlim to xmin, xmax</code><br><code>xlim(xmax=3)  # adjust the max leaving min unchanged</code></p>
+<h2 id="xlabel函数，ylabel函数，title函数"><a href="#xlabel函数，ylabel函数，title函数" class="headerlink" title="xlabel函数，ylabel函数，title函数"></a>xlabel函数，ylabel函数，title函数</h2><p>|设置标签<br>|<code>matplotlib.pyplot.xlabel(s, *args, **kwargs)</code><br><code>matplotlib.pyplot.ylabel(s, *args, **kwargs)</code><br><code>matplotlib.pyplot.title(s, *args, **kwargs)</code><br>|<code>plt.title(&#39;title&#39;)</code></p>
+<h2 id="legend函数"><a href="#legend函数" class="headerlink" title="legend函数"></a>legend函数</h2><p>|设置图例格式位置等等，<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.legend" target="_blank" rel="external">具体参数</a><br>|<code>matplotlib.pyplot.legend(*args, **kwargs)</code><br>|<code>plt.legend(loc=0)</code></p>
+<h2 id="subplots函数和subplot函数"><a href="#subplots函数和subplot函数" class="headerlink" title="subplots函数和subplot函数"></a>subplots函数和subplot函数</h2><p>|创建子图，如果有多图使用此函数<br>|<code>matplotlib.pyplot.subplots(nrows=1, ncols=1, sharex=False, sharey=False, squeeze=True, subplot_kw=None, gridspec_kw=None, **fig_kw)</code><br>|<code>fig, (ax1, ax2) = plt.subplots(1, 2, sharey=True)  # 这里的1，2代表图表的排列</code><br><code>ax1.plot(x, y)  # 直接用轴类的方法就可以了</code><br><code>ax1.set_title(&#39;Sharing Y axis&#39;)</code><br><code>ax2.scatter(x, y)</code></p>
+<p>|也可以使用subplot函数画子图，不过没有subplots直观。subplot函数的作用是规划子图的位置。<br>|<code>subplot(nrows, ncols, plot_number)</code></p>
+<h2 id="scatter函数"><a href="#scatter函数" class="headerlink" title="scatter函数"></a>scatter函数</h2><p>|根据x，y画散点图<br>|<code>matplotlib.pyplot.scatter(x, y, s=None, c=None, marker=None, cmap=None, norm=None, vmin=None, vmax=None, alpha=None, linewidths=None, verts=None, edgecolors=None, **kwargs)</code><br>|</p>
+<h2 id="hist函数"><a href="#hist函数" class="headerlink" title="hist函数"></a>hist函数</h2><p>|直方图<br>|<code>matplotlib.pyplot.hist(x, bins=None, range=None, normed=False, weights=None, cumulative=False, bottom=None, histtype=&#39;bar&#39;, align=&#39;mid&#39;, orientation=&#39;vertical&#39;, rwidth=None, log=False, color=None, label=None, stacked=False, hold=None, data=None, **kwargs)</code><br>|</p>
+<h1 id="Axes类"><a href="#Axes类" class="headerlink" title="Axes类"></a>Axes类</h1><p>常用的方法（散点图，直方图等）在此类中也通用。</p>
+<p><a href="http://matplotlib.org/api/axes_api.html#axes-class" target="_blank" rel="external">参考资料</a></p>
+<h2 id="twinx函数"><a href="#twinx函数" class="headerlink" title="twinx函数"></a>twinx函数</h2><p>|设置y的次坐标轴<br>|<code>Axes.twinx()</code><br>|<code>ax2 = ax1.twinx()</code></p>
+<h2 id="set-title函数"><a href="#set-title函数" class="headerlink" title="set_title函数"></a>set_title函数</h2><p>|设置坐标轴标题<br>|<code>Axes.set_title(label, fontdict=None, loc=&#39;center&#39;, **kwargs)</code><br>|<code>ax1.set_title(&#39;title&#39;)</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;matplotlib使用笔记。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://suplandz.github.io/categories/Python/"/>
+    
+    
+      <category term="matplotlib" scheme="https://suplandz.github.io/tags/matplotlib/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NumPy库使用简介</title>
+    <link href="https://suplandz.github.io/2017/02/05/numpy/"/>
+    <id>https://suplandz.github.io/2017/02/05/numpy/</id>
+    <published>2017-02-05T08:00:00.000Z</published>
+    <updated>2017-04-29T04:35:35.389Z</updated>
+    
+    <content type="html"><![CDATA[<p>NumPy使用笔记。</p>
+<a id="more"></a>
+<p>实例化ndarray的3个函数方法array，zeros和empty。</p>
+<h2 id="numpy-array"><a href="#numpy-array" class="headerlink" title="numpy.array"></a>numpy.array</h2><table>
+<thead>
+<tr>
+<th>创建数组</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numpy.array(object, dtype=None, copy=True, order=&#39;K&#39;, subok=False, ndmin=0)</code></td>
+</tr>
+<tr>
+<td><code>&gt;&gt;&gt; np.array([1, 2, 3], dtype=complex)</code><br><code>array([ 1.+0.j,  2.+0.j,  3.+0.j])</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="numpy-zeros"><a href="#numpy-zeros" class="headerlink" title="numpy.zeros"></a>numpy.zeros</h2><p>|创建一个用0填充的数组<br>|<code>numpy.zeros(shape, dtype=float, order=&#39;C&#39;)</code><br>|<code>&gt;&gt;&gt; np.zeros((5,), dtype=np.int)</code><br><code>array([0, 0, 0, 0, 0])</code></p>
+<h2 id="numpy-empty"><a href="#numpy-empty" class="headerlink" title="numpy.empty"></a>numpy.empty</h2><p>|生成用随机数填充的数组，速度较快，不推荐使用<br>|<code>numpy.empty(shape, dtype=float, order=&#39;C&#39;)</code><br>|<code>&gt;&gt;&gt; np.empty([2, 2], dtype=int)</code><br><code>array([[-1073741821, -1067949133], [  496041986,    19249760]])  #random</code></p>
+<h2 id="numpy-ndarray类"><a href="#numpy-ndarray类" class="headerlink" title="numpy.ndarray类"></a>numpy.ndarray类</h2><p>ndarray可以进行向量化运算，例如<code>x **2</code>或者<code>np.sqrt(x)</code><br>可以使用<code>x[row][column]</code>查值</p>
+<p><strong>常用属性</strong>（使用时不加括号）：</p>
+<p>Attributes     |描述                     |例子<br>T             |转置类似<code>.transpose()</code>    |<code>x.T</code><br>shape         |显示数组维度             |<code>x.shape</code></p>
+<p><strong>常用方法</strong>：</p>
+<p>Methods         |描述                 |例子<br>sum(axis, dtype)|按照axis, dtype求和     |<br>cumsum(axis, dtype)|按照axis, dtype累计求和|<br>std(axis, dtype)|按照axis, dtype求标准差|</p>
+<h2 id="numpy-dtype类"><a href="#numpy-dtype类" class="headerlink" title="numpy.dtype类"></a>numpy.dtype类</h2><p>描述数组的存储类型，所有的数据类型是这个类的实例化。<a href="https://docs.scipy.org/doc/numpy/user/basics.types.html#data-types" target="_blank" rel="external">详细参数</a></p>
+<p>|数据类型|<code>int8 float_</code><br>|使用方式|<code>x = np.float32(1.0)</code><br><code>d = np.dtype(int)</code><br>|结构数组|<code>dt = np.dtype([(&#39;Name&#39;, &#39;S10&#39;), [(&#39;Age&#39;, &#39;i4&#39;)])</code><br><code>s = np.array([(&#39;Smith&#39;, 45), (&#39;Jones&#39;, 53)], dtype = dt)</code></p>
+<p>numpy自带sin，使用时注意不要被math覆盖，导入时import math，math.sin/np.sin</p>
+<h2 id="numpy-random-standard-normal"><a href="#numpy-random-standard-normal" class="headerlink" title="numpy.random.standard_normal"></a>numpy.random.standard_normal</h2><p>|模拟标准正态分布的样本<br>|<code>numpy.random.standard_normal(size=None)</code><br>|<code>s = np.random.standard_normal((4,3))</code></p>
+<h2 id="numpy-log，numpy-log10，numpy-log2，numpy-log1p"><a href="#numpy-log，numpy-log10，numpy-log2，numpy-log1p" class="headerlink" title="numpy.log，numpy.log10，numpy.log2，numpy.log1p"></a>numpy.log，numpy.log10，numpy.log2，numpy.log1p</h2><p>|log对数，可以输入array，list。log1p为1plus计算log(1+x)<br>|<code>numpy.log(x[, out]) = &lt;ufunc &#39;log&#39;&gt;</code></p>
+<h2 id="numpy-random-randint"><a href="#numpy-random-randint" class="headerlink" title="numpy.random.randint"></a>numpy.random.randint</h2><p>|返回随机整数，int。<br>|<code>numpy.random.randint(low, high=None, size=None, dtype=&#39;l&#39;)</code></p>
+<h2 id="numpy-allclose"><a href="#numpy-allclose" class="headerlink" title="numpy.allclose"></a>numpy.allclose</h2><p>|返回True如果两个数组在一定误差范围内<code>absolute(a - b) &lt;= (atol + rtol * absolute(b))</code><br>|<code>numpy.allclose(a, b, rtol=1e-05, atol=1e-08, equal_nan=False)</code><br>|<code>np.allclose([1.0, np.nan], [1.0, np.nan], equal_nan=True)  # True</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;NumPy使用笔记。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://suplandz.github.io/categories/Python/"/>
+    
+    
+      <category term="numpy" scheme="https://suplandz.github.io/tags/numpy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小拳拳捶你胸口吉他谱</title>
+    <link href="https://suplandz.github.io/2017/02/04/xiao-quan-quan/"/>
+    <id>https://suplandz.github.io/2017/02/04/xiao-quan-quan/</id>
+    <published>2017-02-04T10:00:00.000Z</published>
+    <updated>2017-04-29T04:35:29.284Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<pre><code>capo:5
+
+C - G - F - G - C
+(｡•ˇ‸ˇ•｡)哼！都怪你 (`ȏ´) 也不哄哄人家(〃′o`)
+C - G - F - G - C
+(〃′o`)人家超想哭的，捶你胸口，老公！大坏蛋！！！(￣^￣)ゞ
+C - G - F - G - C
+(￣^￣)ゞ咩QAQ 捶你胸口 你好讨厌！(=ﾟωﾟ)
+C - G
+(｡•︿•̀｡)大坏蛋(｡•ˇ‸ˇ•｡)，打死你(つд⊂)
+F - G - C
+(｡•︿•̀｡)大坏蛋(｡•ˇ‸ˇ•｡)，打死你(つд⊂)
+F - C - G - Am - F - G - C
+(=ﾟωﾟ)ﾉ要抱抱嘤嘤嘤哼，人家拿小拳拳捶你胸口！！！(｡•︿•̀｡)
+F - C - G - Am - F - G - C
+(=ﾟωﾟ)ﾉ要抱抱嘤嘤嘤哼，人家拿小拳拳捶你胸口！！！(｡•︿•̀｡)
+</code></pre><p><a href="http://www.bilibili.com/video/av8348417/" target="_blank" rel="external">【秋风MusiX】教你如何用吉他把【小拳拳捶你胸口】编成歌</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;pre&gt;&lt;code&gt;capo:5
+
+C - G - F - G - C
+(｡•ˇ‸ˇ•｡)哼！都怪你 (`ȏ´) 也不哄哄人家(〃′o`)
+C - G - F - G - C
+(〃′o`)人家超想哭的，捶你胸口，老公！大坏蛋！！！(￣^￣)ゞ
+    
+    </summary>
+    
+      <category term="吉他" scheme="https://suplandz.github.io/categories/%E5%90%89%E4%BB%96/"/>
+    
+    
+      <category term="吉他谱" scheme="https://suplandz.github.io/tags/%E5%90%89%E4%BB%96%E8%B0%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>量化常用策略</title>
+    <link href="https://suplandz.github.io/2017/02/02/strategy/"/>
+    <id>https://suplandz.github.io/2017/02/02/strategy/</id>
+    <published>2017-02-02T10:00:00.000Z</published>
+    <updated>2017-04-29T04:35:23.292Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>策略</strong>-&gt;系统-&gt;执行-&gt;反馈</p>
+<a id="more"></a>
+<h1 id="交易的本质"><a href="#交易的本质" class="headerlink" title="交易的本质"></a>交易的本质</h1><p>低买高卖，寻找自我。</p>
+<h1 id="交易的理念"><a href="#交易的理念" class="headerlink" title="交易的理念"></a>交易的理念</h1><p>均值回归&amp;趋势延伸。<br>mean-reversion&amp;momentum<br>一个完美的策略应该是结合上诉这两点的，简单的打个比方，在上涨趋势的回调处做多。</p>
+<h1 id="策略简介"><a href="#策略简介" class="headerlink" title="策略简介"></a>策略简介</h1><p>注：每个人适合的策略都不一样，也就是风险偏好不一样，如果选择不当，就会成为别人的alpha哦。</p>
+<ul>
+<li>资本增值<ol>
+<li>长周期<ul>
+<li>整体经济的不断发展，周期性-&gt;长周期的beta策略<br>长周期的beta策略莫过于指数定投，个人还是非常喜欢这类策略的，简单粗暴，似乎有很多人认为这类策略的收益率不是很高，其实不是这样的。定投的关键的降低平均持仓成本，如果加上一些模式识别会产生非常好的效果。对于一般以理财为目的的人来说，定投指数ETF是非常好的选择，性价比非常高。</li>
+<li>价值投资，低估值-&gt;多因子选股</li>
+</ul>
+</li>
+<li>短周期<ul>
+<li>技术面的撑压线-&gt;模式识别，趋势反转</li>
+<li>突破战法</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>人性的弱点<ol>
+<li>追涨杀跌（贪婪恐惧）</li>
+</ol>
+<ul>
+<li>趋势策略<br>最有名的趋势策略莫过海龟策略，一个长期期望为正的策略，缺点就是回撤太大。如果周期选的过小则无法过滤无效波动，算上交易手续费会产生极大的亏损，但周期过大则会产生极大的滑点，回撤也会难以接受，而中间的调参又会陷入一个过度优化的悖论，时至今日感觉似乎有点鸡肋。不过目前在国内市场中很多CTA的策略还是以趋势为主，周期较短，还是有待考察。个人认为股票市场中长周期的趋势策略跟指数定投收益接近，而指数定投所花费的其他成本更低。</li>
+</ul>
+<ol>
+<li>逐利性</li>
+<li>便宜货</li>
+</ol>
+</li>
+<li>均值回归（择时策略）<ul>
+<li>套利</li>
+<li>统计套利</li>
+</ul>
+</li>
+<li>做市策略</li>
+<li>信息不对称<ul>
+<li>内幕交易</li>
+<li>操纵市场</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;策略&lt;/strong&gt;-&amp;gt;系统-&amp;gt;执行-&amp;gt;反馈&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Quant" scheme="https://suplandz.github.io/categories/Quant/"/>
+    
+    
+      <category term="策略" scheme="https://suplandz.github.io/tags/%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pandas库使用简介</title>
+    <link href="https://suplandz.github.io/2017/01/25/pandas/"/>
+    <id>https://suplandz.github.io/2017/01/25/pandas/</id>
+    <published>2017-01-25T08:00:00.000Z</published>
+    <updated>2017-04-29T04:35:17.366Z</updated>
+    
+    <content type="html"><![CDATA[<p>Pandas使用笔记。<a href="http://pandas.pydata.org/pandas-docs/stable/api.html" target="_blank" rel="external">参考资料</a></p>
+<a id="more"></a>
+<h1 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h1><h2 id="pandas-read-csv"><a href="#pandas-read-csv" class="headerlink" title="pandas.read_csv"></a>pandas.read_csv</h2><p>|读取csv文件</p>
+<p>参数|格式|描述<br>filepath/buffer|str|<code>./data/table.csv</code><br>sep|str, default ‘,’|原始数据间分隔符<br>header|int|原始数据标题行的位置<br>index_col|int|原始数据index位置<br>parse_dates|boolean or int|解析索引列或者其他列的日期<br>dayfirst|boolean, default False|DD/MM格式用来解析日期格式</p>
+<h1 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h1><h2 id="pandas-date-range"><a href="#pandas-date-range" class="headerlink" title="pandas.date_range"></a>pandas.date_range</h2><p>使用<code>pandas.date_range</code>生成<code>DatetimeIndex</code>对象<br><code>pandas.date_range(start=None, end=None, periods=None, freq=&#39;D&#39;, tz=None, normalize=False, name=None, closed=None, **kwargs)[source]</code></p>
+<p>参数|格式|描述<br>start|string/datetime-like|日期左界<br>end|string/datetime-like|日期右界<br>periods|integer/None|期数<br>freq|string|可以使用5D（5天）<a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases" target="_blank" rel="external">更多参数</a><br>tz|string/None|时区<br>normalize|bool|将start，end规划为午夜<br>name|string|结果索引名称</p>
+<p>可以使用<code>df.index</code>将日期赋值给索引<br><code>np.array(df)</code>将<code>DateFrame</code>转回<code>ndarray</code>对象</p>
+<h2 id="pandas-to-datetime"><a href="#pandas-to-datetime" class="headerlink" title="pandas.to_datetime"></a>pandas.to_datetime</h2><p><a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html?highlight=to_datetime#pandas.to_datetime" target="_blank" rel="external">参考</a></p>
+<p>|将参数转成时间格式<br>|<code>pandas.to_datetime(*args, **kwargs)</code><br>|<code>pd.to_datetime([&#39;2009/07/31&#39;, &#39;asd&#39;], errors=&#39;raise&#39;)</code><br><code>ValueError: Unknown string format</code></p>
+<h1 id="DataFrame类"><a href="#DataFrame类" class="headerlink" title="DataFrame类"></a>DataFrame类</h1><p>|创建<code>dataframe</code>对象。<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" target="_blank" rel="external">doc</a><br>|<code>class pandas.DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)</code><br>|<code>df = DataFrame(data=d, index=index)</code></p>
+<p>参数|格式|描述<br>data|ndarray/list/dict|如果使用dict需要加上index，dict代表colums对应关系。如果是ndarray会自动添加索引值。<br>index|ndarray/list<br>columns|ndarray/list</p>
+<p>可以使用<code>df[&#39;columns&#39;][index]</code>查值。</p>
+<p><strong>常用属性</strong>（使用时不加括号）：</p>
+<p>Attributes     |描述                 |例子<br>index         |查看/修改index         |<code>df.index</code><br>values         |查看/修改values         |<code>df.values</code><br>columns     |查看/修改columns     |<code>df.columns</code><br>ix             |基于index查看/修改值    |<code>df.ix[[&#39;a&#39;, &#39;b&#39;]] or df.ix[df.index[1:3]]</code></p>
+<p><strong>常用函数</strong>：</p>
+<p>Methods|描述|例子<br>sum(axis)|求和行或列|<code>df.sum(axis=0)  # equals df.sum()</code><br>cumsum(axis)|累计求和|<code>axis : {index (0), columns (1)}</code><br>apply|附加函数|<code>df.apply(numpy.sum, axis=1)  # equals df.sum(1)</code><br>append|添加数据|先创建新的具有index的dataframe对象<br>如果没有index：<code>df.append(df2, ignore_index=True)</code><br>join(data, how) |合并数据|how默认left向左合并 outer并集<br>mean(axis)均值|<code>axis : {index (0), columns (1)}</code><br>std(axis)|标准差|<code>axis : {index (0), columns (1)}</code><br>describe|通用描述|<br>plot|matplotlib封装器|<br>max|最大值|<code>axis : {index (0), columns (1)}</code><br>size|返回元素数量|<br>groupby|分组求值，可以多列进行|<code>data.groupby([&#39;col1&#39;, &#39;col2&#39;])[&#39;col3&#39;].mean()</code><br>corr|求回归系数|<code>method : {‘pearson’, ‘kendall’, ‘spearman’}</code><br>fillna|填充缺失NaN数据(np.nan)|<code>method=&#39;ffill&#39;  # front fill 使用前面的数据填充, 避免前视问题.</code><br>rolling(window[, min_periods, freq, center, …])|求移动apply, corr, count, cov, kurt, max, mean, median, min, quantile, skew, std, sum, var|<code>df.rolling(2, win_type=&#39;blackman&#39;).sum()</code><br>比如股价低于前50天最低价入场，<code>current_price &lt; stock.rolling(window=50).min()</code><br>shift([periods, freq, axis])|数据向后移动n个index|<code>df/df.shift(1)  # 求index i/index i-1</code></p>
+<p>也可以使用NumPy通用函数：<code>np.sqrt(df)</code></p>
+<h1 id="Series类"><a href="#Series类" class="headerlink" title="Series类"></a>Series类</h1><p>DataFrame选单一列时得到Series对象，方法基本通用</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Pandas使用笔记。&lt;a href=&quot;http://pandas.pydata.org/pandas-docs/stable/api.html&quot;&gt;参考资料&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="https://suplandz.github.io/categories/Python/"/>
+    
+    
+      <category term="pandas" scheme="https://suplandz.github.io/tags/pandas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>量化系统的构建</title>
+    <link href="https://suplandz.github.io/2017/01/22/system/"/>
+    <id>https://suplandz.github.io/2017/01/22/system/</id>
+    <published>2017-01-22T10:00:00.000Z</published>
+    <updated>2017-04-29T04:31:32.670Z</updated>
+    
+    <content type="html"><![CDATA[<p>整理量化策略搭建的主流策略，从数据中发现价值。<br><a id="more"></a></p>
+<ol>
+<li><h2 id="程序主体的设计："><a href="#程序主体的设计：" class="headerlink" title="程序主体的设计："></a>程序主体的设计：</h2><p>其一，自上而下的构建，通过<strong>交易理念</strong>推导出交易系统，并将其程序化。比如索罗斯的交易系统，便是由他的反射理论，推导构建出的交易程序。其实主要包括两大类：宏观层面和人性层面。<br>其二，大数据观察，统计模型判断，建模，判断规则的漏洞或者是feature(<a href="https://www.zhihu.com/question/23667442/answer/28965906" title="冰山订单策略" target="_blank" rel="external">董可人：冰山策略</a>)。主要是套利类的策略，统计套利，高频做市等。<br>其三，自下而上的构建，通过反复的观察，模式识别，将其程序化。跟第二种比较类似，但是稍有区别，人性的成分更多些，例如热点追击，动量策略源于此。</p>
+</li>
+<li><h2 id="交易程序的初步检验："><a href="#交易程序的初步检验：" class="headerlink" title="交易程序的初步检验："></a>交易程序的初步检验：</h2><p>交易系统的检验，必须充分考虑手续费和滑点的影响。<br>通常认为，在这一步，系统的胜率应该在50%以上，最大回撤时间不超过90个周期（因不同级别的交易系统不能按统一时间计算），连续亏损次数不超过5次，那么这个系统基本具备持续盈利的能力。</p>
+</li>
+<li><h2 id="交易系统的优化："><a href="#交易系统的优化：" class="headerlink" title="交易系统的优化："></a>交易系统的优化：</h2><p>谨防overfit，主要是风控部分。</p>
+</li>
+<li><h2 id="交易系统的外推检验："><a href="#交易系统的外推检验：" class="headerlink" title="交易系统的外推检验："></a>交易系统的外推检验：</h2><p>通过了优化的系统，已经初步成熟，外推检验就像生产线中的质检一样，一个产品能否上市，这是最重要的一个环节，对前期的结论具有一票否决权。<br>外推检验分两种：<br>一种是时间外推，即用更多的数据进行回测，观察交易系统是否稳定。<br>二种是品种外推，如题主的螺纹程序，拿去橡胶，铜，豆粕，股指这些活跃品种上进行回测，甚至在外汇，国外商品，国外股市上进行检验。<br>一套具备实盘盈利前景的系统，必须适用于市场上绝大部分品种的交易。<br>如果不能经过外推检验，那么这个系统很可能只是一个偶然，或者已经过度优化了。</p>
+</li>
+<li><h2 id="交易系统的实盘使用和维护："><a href="#交易系统的实盘使用和维护：" class="headerlink" title="交易系统的实盘使用和维护："></a>交易系统的实盘使用和维护：</h2><p>很少有系统是能经过第四条检验的，如果走到这一步，恭喜了，你可以相对安心的用它来赚钱了。<br>当然也不是睡睡觉数数钱那么简单，电脑有时候也是会出问题的，这个问题暂且不论，一个非常严重的现象是，行情波动的特征是会变的。<br>其变化表现在：<br>其一，波动特性改变了。<br>举例来说：2005年之前，只要有个最简单最简单的均线系统（上五日线做多，下五日线反手做空），就可以发大财了。但是2005年以后，这样简单的系统获利已经不稳定，而09年以后，基本就不可能再用来获利了。又如前几年，做股指高频交易的人都发财了，我听到最高的一年有30倍，但是现在，高频交易都已经开始自相残杀了。为什么？因为市场上精明的交易者越来越多了，当你的对手还在用肉搏的时候，只要有一把手枪就可以称王，但是现在，大家都已经开上飞机坦克了，战场结构必然变化。<br>其二，交易环境变化。<br>比如今年，期货夜盘的大量推出，导致不同时间段的交易分布不再均匀，很多交易系统便不能适应了。<br>前两年期货很多小合约改成了大合约，也导致了很多微观波动结构的改变。<br>所以交易系统必须时时进行维护和修补，甚至必要时直接宣布它死亡。</p>
+</li>
+</ol>
+<p>从这一点上看，又可以发现，第一步设计交易系统的两种方式的优劣。自下而上开发的系统，永远只是根据开发时期的数据作为样本，日后修改起来将非常频繁，也非常困难，而自上而下开发的系统，它是接近于本质的，而市场波动的本质特征，几百年来都未曾改变，只不过表现方式变了而已。</p>
+<h2 id="如何看待交易系统失效"><a href="#如何看待交易系统失效" class="headerlink" title="如何看待交易系统失效"></a>如何看待交易系统失效</h2><p>董可人：<br>理论上，要用科学方法进行分析。市场环境有没有变化？比如波动性有没有异常，延迟水平是否仍保持领先，甚至交易所的规则或策略有无变化，这些都有可能造成影响，需要仔细分析数据才能得出结论。实际上很多时候，仔细分析过就会发现仍有巨大的改进空间。简单说就是一个大胆假设，小心求证，科学化系统化的分析过程，这也是为什么这一行会偏爱PhD，因为和学术研究还挺有相似之处的。现实中，因为决策层和执行层的分离，这个问题的答案基本上是“看心情”。高层或者客户可能根本没有兴趣看你们的细节分析，才不会管你什么科学不科学。如果你在有限的时间内没能拿出一个有效的方案，即便理论上还有很多可能性，人家就会想 “F##k it. We are losing money so we stop”。不相信我说的？请看 @腾天老师名言：“DON’T BE A DICK FOR A PIP”。</p>
+<p>小须弥咩：<br>任何一个交易系统，一定要有客观、明确的界定其失效（死亡）的方法。<br>没有任何一个系统是可以一劳永逸的，即便是自上而下的系统，也是会有失效的时候，只不过使用周期比较长，所以必须要有界定其死亡的标准。比如上图的白银系统，最近半年我都没有修改，中间经历了2个多月的调整，我当时判断它死亡的标准是，回撤掉前期利润总和的1/10或者超过3个月，判断为留院观察，再等2月资金曲线不能创新高直接宣布死亡。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;整理量化策略搭建的主流策略，从数据中发现价值。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Quant" scheme="https://suplandz.github.io/categories/Quant/"/>
+    
+    
+      <category term="策略" scheme="https://suplandz.github.io/tags/%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="量化系统" scheme="https://suplandz.github.io/tags/%E9%87%8F%E5%8C%96%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git语法备忘录</title>
+    <link href="https://suplandz.github.io/2017/01/20/git-command/"/>
+    <id>https://suplandz.github.io/2017/01/20/git-command/</id>
+    <published>2017-01-20T05:00:00.000Z</published>
+    <updated>2017-04-29T04:35:08.519Z</updated>
+    
+    <content type="html"><![CDATA[<p>主要记录Git的安装配置和基本语法，最后更新2017/01/20。</p>
+<a id="more"></a>
+<h2 id="安装配置Git"><a href="#安装配置Git" class="headerlink" title="安装配置Git"></a>安装配置Git</h2><p><a href="https://git-for-windows.github.io/" title="git官网下载" target="_blank" rel="external">Git for Windows</a><br>所有操作在GitBash下进行。<br>注册Github的账号，然后设置Git的用户名和邮箱：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;username&quot;</div><div class="line">git config --global user.email &quot;your email&quot;</div></pre></td></tr></table></figure>
+<h2 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h2><ol>
+<li>查看是否已有ssh秘钥：<code>cd ~/.ssh</code>，如果有则删除。</li>
+<li>生成秘钥<code>ssh-keygen -t rsa -C “email”</code>，采取RSA加密，如果不设置密码则按三次回车即可，秘钥可通过<code>cd ~/.ssh</code>查看。Git中<code>~</code>表示的是<code>User\Username</code>这个文件夹。</li>
+<li>在Github上添加SSH，Setting/SSH and GPG keys，复制rsa.pub的内容上去即可。测试代码<code>ssh -T git@github.com</code>，如果显示<em>You’ve successfully authenticated, but GitHub does not provide shell access</em>就说明成功了。</li>
+<li>Push时使用SSH认证：在你下载的项目文件夹中有隐藏的<code>.git</code>目录，打开config，修改<code>url = https://...</code>为SSH的地址，地址显示在你的github项目中Clone or download里，切换为Use SSH就可以看到了。</li>
+<li>Mac OS X 中显示隐藏文件的命令是<code>defaults write com.apple.finder AppleShowAllFiles -bool true</code>取消显示则改为false即可，重启Finder。CMD+Option+ESC调出。</li>
+</ol>
+<h2 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h2><ol>
+<li>先cd到你需要clone的位置，执行git clone命令。</li>
+<li>cd 到项目文件夹。</li>
+<li><code>git add .</code>添加所有文件</li>
+<li><code>git commit -m &quot;revise info&quot;</code>提交修改信息</li>
+<li><code>git push origin</code>提交远程仓库，如果完成了配置中的第四步就不需要输入密码了。Enjoy。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主要记录Git的安装配置和基本语法，最后更新2017/01/20。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Memo" scheme="https://suplandz.github.io/categories/Memo/"/>
+    
+    
+      <category term="git" scheme="https://suplandz.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MarkDown语法</title>
+    <link href="https://suplandz.github.io/2017/01/18/how-to-use-markdown/"/>
+    <id>https://suplandz.github.io/2017/01/18/how-to-use-markdown/</id>
+    <published>2017-01-18T05:00:00.000Z</published>
+    <updated>2017-04-29T04:35:02.052Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<p>如果你想要依赖 Markdown 来插入 <code>&lt;br /&gt;</code> 标签的话，在插入处先按入两个以上的空格然后回车。</p>
+<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>Sublime + 一款配色主题即可。主题文件放在<code>Sublime/Preferences/Browse Packages</code><br>或者ATOM + 自带的preview（control + shift + M）。</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 这是 H1</span></div><div class="line"><span class="section"># 这是 H1 #</span></div><div class="line"><span class="section">## 这是 H2 ##</span></div><div class="line"><span class="section">### 这是 H3 #####</span></div></pre></td></tr></table></figure>
+<h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="quote">&gt; ## 这是一个标题。</span></div><div class="line"><span class="quote">&gt;</span></div><div class="line">&gt; 1.   这是第一行列表项。</div><div class="line"><span class="quote">&gt; 2.   这是第二行列表项。</span></div><div class="line"><span class="quote">&gt;</span></div><div class="line">&gt; &gt; 给出一些例子代码：</div><div class="line"><span class="quote">&gt;</span></div><div class="line">&gt;     return shell_exec("echo $input | $markdown_script");</div></pre></td></tr></table></figure>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">*   </span>Red</div><div class="line"><span class="bullet">+   </span>Green</div><div class="line"><span class="bullet">-   </span>Blue</div></pre></td></tr></table></figure>
+<p>要让列表看起来更漂亮，你可以把内容用固定的缩进整理好</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">*  </span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div><div class="line">   Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,</div><div class="line">   viverra nec, fringilla in, laoreet vitae, risus.</div></pre></td></tr></table></figure>
+<p>有些情况下项目列表很可能会不小心产生</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1986. </span>What a great season.</div></pre></td></tr></table></figure>
+<p>要避免这样的状况，你可以在句点前面加上反斜杠。</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1986\. What a great season.</div></pre></td></tr></table></figure>
+<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>只要简单地缩进 4 个空格或是 1 个制表符就可以</p>
+<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">* </span><span class="bullet">* *</span></div><div class="line"><span class="emphasis">***</span></div><div class="line"><span class="strong">*****</span></div><div class="line"><span class="section">- - -</span></div><div class="line">---------------------------------------</div></pre></td></tr></table></figure>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><h3 id="行内式"><a href="#行内式" class="headerlink" title="行内式"></a>行内式</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">This is [<span class="string">an example</span>](<span class="link">http://example.com/ "Optional Title"</span>) inline link.</div><div class="line">[<span class="string">This link</span>](<span class="link">http://example.net/</span>) has no title attribute.</div></pre></td></tr></table></figure>
+<p>如果你是要链接到同样主机的资源，你可以使用相对路径：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">See my [<span class="string">About</span>](<span class="link">/about/</span>) page for details.</div></pre></td></tr></table></figure>
+<h3 id="参考式"><a href="#参考式" class="headerlink" title="参考式"></a>参考式</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">This is [<span class="string">an example</span>][<span class="symbol">id</span>] reference-style link. id 不区分大小写</div></pre></td></tr></table></figure>
+<p>接着，在文件的任意处，你可以把这个标记的链接内容定义出来：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[<span class="symbol">id</span>]: <span class="link">http://example.com/  "Optional Title Here"</span></div><div class="line">[<span class="symbol">id</span>]: <span class="link">http://example.com/  </span></div><div class="line"><span class="code">      "Optional Title Here"</span></div></pre></td></tr></table></figure>
+<p>隐式链接标记可以省略id</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="string">Google</span>][<span class="symbol"></span>]</div><div class="line">[<span class="symbol">Google</span>]: <span class="link">http://google.com/</span></div></pre></td></tr></table></figure>
+<p>也可以采用参考文献式</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">I get 10 times more traffic from [Google] [1] than from</div><div class="line">[Yahoo] [2] or [MSN] [3].</div><div class="line">[<span class="symbol">1</span>]: <span class="link">http://google.com/        "Google"</span></div><div class="line">[<span class="symbol">2</span>]: <span class="link">http://search.yahoo.com/  "Yahoo Search"</span></div><div class="line">[<span class="symbol">3</span>]: <span class="link">http://search.msn.com/    "MSN Search"</span></div></pre></td></tr></table></figure>
+<p><code>&lt;http://example.com/&gt;</code> 尖括号包起来会自动把它转成链接。</p>
+<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>Markdown 使用星号（<em>）作为标记强调字词的符号，被 </em> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 * 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="emphasis">*single asterisks*</span>  # <span class="xml"><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span> 斜体</div><div class="line"><span class="strong">**double asterisks**</span>  # <span class="xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span> 加粗</div></pre></td></tr></table></figure>
+<p>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\<span class="emphasis">*this text is surrounded by literal asterisks\*</span></div></pre></td></tr></table></figure>
+<p>删除线，使用~~</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~~需删除的内容~~</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>如果要标记一小段行内代码，你可以用反引号把它包起来（`），例如：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Use the <span class="code">`printf()`</span> function.</div></pre></td></tr></table></figure>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h3 id="行内式-1"><a href="#行内式-1" class="headerlink" title="行内式"></a>行内式</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![<span class="string">Alt text</span>](<span class="link">/path/to/img.jpg</span>)</div><div class="line">![<span class="string">Alt text</span>](<span class="link">/path/to/img.jpg "Optional title"</span>)</div></pre></td></tr></table></figure>
+<h3 id="参考式-1"><a href="#参考式-1" class="headerlink" title="参考式"></a>参考式</h3><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![<span class="string">Alt text</span>][<span class="symbol">id</span>]</div><div class="line">[<span class="symbol">id</span>]: <span class="link">url/to/image  "Optional title attribute"</span></div></pre></td></tr></table></figure>
+<p>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的<code>&lt;img&gt;</code>标签。</p>
+<p><a href="http://wowubuntu.com/markdown/index.html#blockquote" target="_blank" rel="external">参考资料</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;如果你想要依赖 Markdown 来插入 &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; 标签的话，在插入处先按入两个以上的空格然后回车。&lt;/p&gt;
+&lt;h2 id=&quot;编辑器&quot;&gt;&lt;a href=&quot;#编辑器&quot; class=&quot;headerli
+    
+    </summary>
+    
+      <category term="Memo" scheme="https://suplandz.github.io/categories/Memo/"/>
+    
+    
+      <category term="markdown" scheme="https://suplandz.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Useful links</title>
+    <link href="https://suplandz.github.io/2017/01/17/useful-links/"/>
+    <id>https://suplandz.github.io/2017/01/17/useful-links/</id>
+    <published>2017-01-17T11:00:56.000Z</published>
+    <updated>2017-04-29T04:34:55.862Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li><a href="http://blog.csdn.net/zhang1027963459/article/details/50478340" target="_blank" rel="external">Git代码</a></li>
+<li><a href="https://bigballon.github.io/" target="_blank" rel="external">爬虫相关</a></li>
+<li><a href="http://www.jianshu.com/u/03a93cbd0eae" target="_blank" rel="external">爬虫相关 漫画</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/zhang1027963459/article/details/50478340&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;
+    
+    </summary>
+    
+      <category term="Memo" scheme="https://suplandz.github.io/categories/Memo/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>从零博客之路</title>
+    <link href="https://suplandz.github.io/2017/01/16/jekyll/"/>
+    <id>https://suplandz.github.io/2017/01/16/jekyll/</id>
+    <published>2017-01-16T09:00:56.000Z</published>
+    <updated>2017-04-29T04:39:01.828Z</updated>
+    
+    <content type="html"><![CDATA[<p>从零教你搭博客。<br><a id="more"></a><br>Github Pages基于静态页面，目前有两大主流框架，分别是Hexo和Jekyll。两个框架我都用过一段时间，最终我还是决定Hexo，无他，唯主题好看。两种框架都是用markdown语法，下面简单介绍下两种不同框架的搭建。</p>
+<h2 id="Jekyll框架"><a href="#Jekyll框架" class="headerlink" title="Jekyll框架"></a>Jekyll框架</h2><h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><ol>
+<li><a href="http://rubyinstaller.org/downloads" target="_blank" rel="external">安装Ruby</a><br>Jekyll是使用ruby语言进行开发的，所以我们第一步需要安装ruby以及ruby相关的开发工具。安装的时候在<code>Add Ruby executables to your PATH</code>打勾。接下来安装相应版本的Development Kit。<br>Development Kit的安装方法：<pre><code>$ cd to it
+$ ruby dk.rb init
+$ ruby dk.rb
+</code></pre>如果不成功:<pre><code>$ ruby dk.rb -f
+</code></pre></li>
+<li>安装Jekyll  <pre><code>$ gem install jekyll  
+$ jekyll new blog
+$ cd blog
+$ jekyll serve
+</code></pre>打开浏览器输入网址<code>http://127.0.0.1:4000/</code>就可以看原生的Jekyll博客了！<br>PS: Mac OS X出现权限问题在命令前加上sudo。</li>
+</ol>
+<h3 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h3><p>以安装<a href="https://github.com/Simpleyyt/jekyll-jacman" target="_blank" rel="external">Jacman主题</a>为例：</p>
+<pre><code>$ ruby --version # 确保已安装Ruby 2.1.0 或更高版本
+$ gem install bundler # 安装Bundler
+$ git clone https://github.com/Simpleyyt/jekyll-jacman.git # 下载 Jacman 主题
+$ cd jekyll-jacman
+$ bundle install # 安装依赖
+$ bundle exec jekyll server # 运行 Jekyll
+</code></pre><p>安装bundler可能会受网络影响，可以把Gems Source换成<a href="https://gems.ruby-china.org/" target="_blank" rel="external">gems.ruby-china.org</a>：</p>
+<pre><code>$ bundle config mirror.https://rubygems.org https://gems.ruby-china.org
+</code></pre><p>如果遇到SSL证书问题，你又无法解决，请直接用 <code>http://gems.ruby-china.org</code> （https替换为http）避免。（<a href="https://github.com/ruby-china/rubygems-mirror/wiki" target="_blank" rel="external">另一种解决方式</a>）  </p>
+<p><a href="https://github.com/codinfox/codinfox-lanyon" target="_blank" rel="external">Codinfox-lanyon主题</a><br>因为Jekyll升级到3.0之前的一些老插件在Jacman上用不了，加之修改源码的学习成本高，遂换了这款主题。其实之前尝试在默认主题下添加目录导航，但发现Github Pages不支持<a href="https://github.com/jekyll/jekyll-archives" target="_blank" rel="external">jekyll-archives</a>， 只能修改前端源码，由于缺乏必要的前端知识，还是放弃折腾了。<br>安装过程很简单，直接clone下来，修改下配置文件，替换原始文件（除了 <code>.git</code> ）即可。</p>
+<h2 id="Hexo框架"><a href="#Hexo框架" class="headerlink" title="Hexo框架"></a>Hexo框架</h2><h3 id="环境搭建-1"><a href="#环境搭建-1" class="headerlink" title="环境搭建"></a>环境搭建</h3><ol>
+<li>Hexo基于Node.js，所以先<a href="https://nodejs.org/en/" target="_blank" rel="external">安装Node.js</a>。然后<a href="https://git-scm.com/" target="_blank" rel="external">安装Git</a>。</li>
+<li>安装Hexo<pre><code>$ npm install -g hexo-cli
+</code></pre> 安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。<pre><code>$ hexo init &lt;folder&gt;
+$ cd &lt;folder&gt;
+$ npm install
+$ hexo g # 或者hexo generate
+$ hexo s # 或者hexo server，可以在http://localhost:4000/ 查看
+</code></pre> npm的安装有时候会因为网络问题卡住，这时候多试几次，目前没啥好办法。</li>
+</ol>
+<h3 id="主题安装-1"><a href="#主题安装-1" class="headerlink" title="主题安装"></a>主题安装</h3><p>下载主题包放在 <code>themes</code> 文件夹内，然后修改 <code>_config.yml</code> 内的 <code>theme</code> 设定，即可切换主题。本人使用的是<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">next主题</a>。</p>
+<h3 id="常用的Hexo命令"><a href="#常用的Hexo命令" class="headerlink" title="常用的Hexo命令"></a>常用的Hexo命令</h3><pre><code>$ hexo generate (hexo g) # 生成静态文件，会在当前目录下生成一个新的叫做public的文件夹
+$ hexo server (hexo s) # 启动本地web服务，用于博客的预览
+$ hexo deploy (hexo d) # 部署播客到远端（比如github, heroku等平台）
+$ hexo new &quot;postName&quot; # 新建文章
+$ hexo new page &quot;pageName&quot; # 新建页面
+</code></pre><h3 id="部署到Github-Pages"><a href="#部署到Github-Pages" class="headerlink" title="部署到Github Pages"></a>部署到Github Pages</h3><ol>
+<li>安装扩展<pre><code>$ npm install hexo-deployer-git --save
+</code></pre>需要先配置好ssh秘钥。</li>
+<li>修改 <code>_config.yml</code><pre><code>deploy:
+  type: git
+  repo: git@github.com:jiji262/jiji262.github.io.git
+  branch: master
+</code></pre>然后执行<pre><code>$ hexo d
+</code></pre>即上传到了Github。<br>当然如果你喜欢使用git命令的话可以直接在 <code>$ hexo g</code> 生成的 <code>public</code> 文件夹下添加 <code>.git</code> 文件夹，结合ATOM直接 <code>$ git push</code> ，这样可以添加自定义的commit修改记录。</li>
+</ol>
+<h3 id="Jekyll的迁移"><a href="#Jekyll的迁移" class="headerlink" title="Jekyll的迁移"></a>Jekyll的迁移</h3><p>把 <code>_posts</code> 文件夹内的所有文件复制到 <code>source/_posts</code> 文件夹，并在 <code>_config.yml</code> 中修改 <code>new_post_name</code> 参数。</p>
+<pre><code>new_post_name: :year-:month-:day-:title.md
+</code></pre><h2 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h2><ol>
+<li>安装Git<br><a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git for Windows</a></li>
+<li>配置Git<br>参考<a href="/2017/01/20/git-command/" title="Git语法备忘录">Git语法备忘录</a></li>
+</ol>
+<h2 id="撰写博客"><a href="#撰写博客" class="headerlink" title="撰写博客"></a>撰写博客</h2><ul>
+<li><p>Jekyll和Hexo都识别<a href="/memo/2017/01/18/how-to-use-markdown/">markdown语法</a>，<del>MD编辑器我使用的是sublime，简洁好用</del> 使用ATOM作为MD的编辑器，control + shift + M 自动调出预览效果。<br>博文放在目录<code>_post</code>下面，按照日期-标题的命名规则新建markdown后缀的文件，打开文件后输入必要的YML信息，具体可以参考自带的示例。编辑好文章后就可以使用Git push上去了。Jekyll会自动转化相应的静态网页。</p>
+<p>Push的时候可以使用ATOM的Git Plus插件（需要先<a href="https://suplandz.github.io/memo/2017/01/20/git-command/">配置Git Bash</a>），安装好之后不需要在Git Plus中修改参数，path直接用默认的git即可（可以在cmd中使用git确认是否在环境中配置成功）。在ATOM-FILE-ADD PROJECT FOLDER加入Repository，因为文件夹包含git子文件夹，atom会自动识别，随后使用control + shift + A添加文件，control + shift + X添加评论，最后鼠标点个Push即可。如果没有成功的确认下Git Bash有没有配置成功。</p>
+</li>
+</ul>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><p>微信链接的图片尺寸必须大于： 300px × 300px，打入如下代码隐藏图片</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"display: none;"</span></span></div><div class="line">    <span class="attr">document.getElementById</span>("<span class="attr">typediv1</span>")<span class="attr">.style.display</span>=<span class="string">"none"</span>;&gt;</div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/img/git.jpg"</span> &gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">手把手教你使用Hexo + Github Pages搭建个人独立博客</a></li>
+<li><a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT主题配置</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从零教你搭博客。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Memo" scheme="https://suplandz.github.io/categories/Memo/"/>
+    
+    
+      <category term="jekyll" scheme="https://suplandz.github.io/tags/jekyll/"/>
+    
+      <category term="hexo" scheme="https://suplandz.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
