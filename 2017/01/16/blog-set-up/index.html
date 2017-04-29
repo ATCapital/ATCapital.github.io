@@ -96,10 +96,10 @@
 <meta name="keywords" content="jekyll,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从零博客之路">
-<meta property="og:url" content="https://suplandz.github.io/2017/01/16/jekyll/index.html">
+<meta property="og:url" content="https://suplandz.github.io/2017/01/16/blog-set-up/index.html">
 <meta property="og:site_name" content="AT Capital">
 <meta property="og:description" content="从零教你搭博客。">
-<meta property="og:updated_time" content="2017-04-29T04:39:01.828Z">
+<meta property="og:updated_time" content="2017-04-29T13:33:19.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零博客之路">
 <meta name="twitter:description" content="从零教你搭博客。">
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="https://suplandz.github.io/2017/01/16/jekyll/"/>
+  <link rel="canonical" href="https://suplandz.github.io/2017/01/16/blog-set-up/"/>
 
 
 
@@ -309,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://suplandz.github.io/2017/01/16/jekyll/">
+    <link itemprop="mainEntityOfPage" href="https://suplandz.github.io/2017/01/16/blog-set-up/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liu Fangnan">
@@ -386,9 +386,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/16/jekyll/#comments" itemprop="discussionUrl">
+                <a href="/2017/01/16/blog-set-up/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/01/16/jekyll/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/01/16/blog-set-up/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -465,7 +465,8 @@ $ hexo new page &quot;pageName&quot; # 新建页面
 </ol>
 <h3 id="Jekyll的迁移"><a href="#Jekyll的迁移" class="headerlink" title="Jekyll的迁移"></a>Jekyll的迁移</h3><p>把 <code>_posts</code> 文件夹内的所有文件复制到 <code>source/_posts</code> 文件夹，并在 <code>_config.yml</code> 中修改 <code>new_post_name</code> 参数。</p>
 <pre><code>new_post_name: :year-:month-:day-:title.md
-</code></pre><h2 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h2><ol>
+</code></pre><h3 id="表格CSS优化"><a href="#表格CSS优化" class="headerlink" title="表格CSS优化"></a>表格CSS优化</h3><p>表格宽度自动：<br><code>blog\themes\next\source\css\_common\scaffolding\tables.styl</code>修改<code>table-layout: automatic;</code><br>表格样式修改：<br>在<code>blog\themes\next\source\css\_custom\custom.styl</code>增加以下内容：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>; <span class="comment">/*表格宽度*/</span></div><div class="line">    <span class="attribute">max-width</span>: <span class="number">65em</span>; <span class="comment">/*表格最大宽度，避免表格过宽*/</span></div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#dedede</span>; <span class="comment">/*表格外边框设置*/</span></div><div class="line">    <span class="attribute">margin</span>: <span class="number">15px</span> auto; <span class="comment">/*外边距*/</span></div><div class="line">    <span class="attribute">border-collapse</span>: collapse; <span class="comment">/*使用单一线条的边框*/</span></div><div class="line">    <span class="attribute">empty-cells</span>: show; <span class="comment">/*单元格无内容依旧绘制边框*/</span></div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">table-layout</span>: automatic;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">th</span>,<span class="selector-tag">table</span> <span class="selector-tag">td</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">35px</span>; <span class="comment">/*统一每一行的默认高度*/</span></div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#dedede</span>; <span class="comment">/*内部边框样式*/</span></div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">10px</span>; <span class="comment">/*内边距*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">th</span> &#123;</div><div class="line">    <span class="attribute">font-weight</span>: bold; <span class="comment">/*加粗*/</span></div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>; <span class="comment">/*内容居中，加上 !important 避免被 Markdown 样式覆盖*/</span></div><div class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(158,188,226,0.2); <span class="comment">/*背景色*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">th</span> &#123;</div><div class="line">    <span class="attribute">white-space</span>: nowrap; <span class="comment">/*表头内容强制在一行显示*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">td</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</div><div class="line">  <span class="comment">/*首列不换行*/</span></div><div class="line">    <span class="attribute">white-space</span>: nowrap;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#efefef</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h2><ol>
 <li>安装Git<br><a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git for Windows</a></li>
 <li>配置Git<br>参考<a href="/2017/01/20/git-command/" title="Git语法备忘录">Git语法备忘录</a></li>
 </ol>
@@ -676,7 +677,7 @@ $ hexo new page &quot;pageName&quot; # 新建页面
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jekyll框架"><span class="nav-number">1.</span> <span class="nav-text">Jekyll框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题安装"><span class="nav-number">1.2.</span> <span class="nav-text">主题安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo框架"><span class="nav-number">2.</span> <span class="nav-text">Hexo框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建-1"><span class="nav-number">2.1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题安装-1"><span class="nav-number">2.2.</span> <span class="nav-text">主题安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的Hexo命令"><span class="nav-number">2.3.</span> <span class="nav-text">常用的Hexo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到Github-Pages"><span class="nav-number">2.4.</span> <span class="nav-text">部署到Github Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jekyll的迁移"><span class="nav-number">2.5.</span> <span class="nav-text">Jekyll的迁移</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联Github"><span class="nav-number">3.</span> <span class="nav-text">关联Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撰写博客"><span class="nav-number">4.</span> <span class="nav-text">撰写博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other"><span class="nav-number">5.</span> <span class="nav-text">Other</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jekyll框架"><span class="nav-number">1.</span> <span class="nav-text">Jekyll框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题安装"><span class="nav-number">1.2.</span> <span class="nav-text">主题安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo框架"><span class="nav-number">2.</span> <span class="nav-text">Hexo框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境搭建-1"><span class="nav-number">2.1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题安装-1"><span class="nav-number">2.2.</span> <span class="nav-text">主题安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的Hexo命令"><span class="nav-number">2.3.</span> <span class="nav-text">常用的Hexo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到Github-Pages"><span class="nav-number">2.4.</span> <span class="nav-text">部署到Github Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jekyll的迁移"><span class="nav-number">2.5.</span> <span class="nav-text">Jekyll的迁移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格CSS优化"><span class="nav-number">2.6.</span> <span class="nav-text">表格CSS优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联Github"><span class="nav-number">3.</span> <span class="nav-text">关联Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撰写博客"><span class="nav-number">4.</span> <span class="nav-text">撰写博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other"><span class="nav-number">5.</span> <span class="nav-text">Other</span></a></li></ol></div>
             
 
           </div>
@@ -826,8 +827,8 @@ $ hexo new page &quot;pageName&quot; # 新建页面
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://suplandz.github.io/2017/01/16/jekyll/';
-          this.page.identifier = '2017/01/16/jekyll/';
+          this.page.url = 'https://suplandz.github.io/2017/01/16/blog-set-up/';
+          this.page.identifier = '2017/01/16/blog-set-up/';
           this.page.title = '从零博客之路';
         };
         var d = document, s = d.createElement('script');

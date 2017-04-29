@@ -1695,7 +1695,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2fffaf;
+  background: #d6bb49;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2896,10 +2896,6 @@ table th {
 table td:nth-child(1) {
 /*首列不换行*/
   white-space: nowrap;
-}
-table tbody tr:nth-child(2n) {
-/*隔行变色*/
-  background: rgba(102,128,153,0.05);
 }
 table tr:hover {
   background: #efefef;

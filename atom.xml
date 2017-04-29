@@ -98,65 +98,64 @@
     <link href="https://suplandz.github.io/2017/04/15/python-OS/"/>
     <id>https://suplandz.github.io/2017/04/15/python-OS/</id>
     <published>2017-04-15T04:00:00.000Z</published>
-    <updated>2017-04-29T11:48:43.000Z</updated>
+    <updated>2017-04-29T13:53:30.524Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>
-<p>Here is a list of the different modes of opening a file:</p>
+    <content type="html"><![CDATA[<p>python 打开文件的不同模式<br><a id="more"></a></p>
 <table>
 <thead>
 <tr>
-<th>code</th>
-<th>meaning</th>
+<th>模式</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>r</td>
-<td>Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.</td>
+<td>只读，指针在文档起始位置</td>
 </tr>
 <tr>
 <td>rb</td>
-<td>Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.</td>
+<td>二进制只读，指针在文档起始位置，推荐</td>
 </tr>
 <tr>
 <td>r+</td>
-<td>Opens a file for both reading and writing. The file pointer will be at the beginning of the file.</td>
+<td>读写，指针在文档起始位置</td>
 </tr>
 <tr>
 <td>rb+</td>
-<td>Opens a file for both reading and writing in binary format. The file pointer will be at the beginning of the file.</td>
+<td>二进制读写打开，指针在文档起始位置</td>
 </tr>
 <tr>
 <td>w</td>
-<td>Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</td>
+<td>只写，当文档存在时直接覆盖，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>wb</td>
-<td>Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</td>
+<td>二进制只写，当文档存在时直接覆盖，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>w+</td>
-<td>Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</td>
+<td>读写，当文档存在时直接覆盖，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>wb+</td>
-<td>Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</td>
+<td>二进制读写，当文档存在时直接覆盖，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>a</td>
-<td>Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</td>
+<td>增补模式，指针在文档结束位置，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>ab</td>
-<td>Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</td>
+<td>二进制增补模式，指针在文档结束位置，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>a+</td>
-<td>Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</td>
+<td>增补只读模式，指针在文档结束位置，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>ab+</td>
-<td>Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</td>
+<td>二进制增补只读模式，指针在文档结束位置，当文档不存在时创建</td>
 </tr>
 </tbody>
 </table>
@@ -164,15 +163,7 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;Here is a list of the different modes of opening a file:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;code&lt;/th&gt;
-&lt;th&gt;meaning&lt;/th&gt;
-&lt;/tr&gt;
-
+      &lt;p&gt;python 打开文件的不同模式&lt;br&gt;
     
     </summary>
     
@@ -678,10 +669,10 @@ C - G - F - G - C
   
   <entry>
     <title>从零博客之路</title>
-    <link href="https://suplandz.github.io/2017/01/16/jekyll/"/>
-    <id>https://suplandz.github.io/2017/01/16/jekyll/</id>
+    <link href="https://suplandz.github.io/2017/01/16/blog-set-up/"/>
+    <id>https://suplandz.github.io/2017/01/16/blog-set-up/</id>
     <published>2017-01-16T09:00:56.000Z</published>
-    <updated>2017-04-29T04:39:01.828Z</updated>
+    <updated>2017-04-29T13:33:19.957Z</updated>
     
     <content type="html"><![CDATA[<p>从零教你搭博客。<br><a id="more"></a><br>Github Pages基于静态页面，目前有两大主流框架，分别是Hexo和Jekyll。两个框架我都用过一段时间，最终我还是决定Hexo，无他，唯主题好看。两种框架都是用markdown语法，下面简单介绍下两种不同框架的搭建。</p>
 <h2 id="Jekyll框架"><a href="#Jekyll框架" class="headerlink" title="Jekyll框架"></a>Jekyll框架</h2><h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><ol>
@@ -735,7 +726,8 @@ $ hexo new page &quot;pageName&quot; # 新建页面
 </ol>
 <h3 id="Jekyll的迁移"><a href="#Jekyll的迁移" class="headerlink" title="Jekyll的迁移"></a>Jekyll的迁移</h3><p>把 <code>_posts</code> 文件夹内的所有文件复制到 <code>source/_posts</code> 文件夹，并在 <code>_config.yml</code> 中修改 <code>new_post_name</code> 参数。</p>
 <pre><code>new_post_name: :year-:month-:day-:title.md
-</code></pre><h2 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h2><ol>
+</code></pre><h3 id="表格CSS优化"><a href="#表格CSS优化" class="headerlink" title="表格CSS优化"></a>表格CSS优化</h3><p>表格宽度自动：<br><code>blog\themes\next\source\css\_common\scaffolding\tables.styl</code>修改<code>table-layout: automatic;</code><br>表格样式修改：<br>在<code>blog\themes\next\source\css\_custom\custom.styl</code>增加以下内容：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>; <span class="comment">/*表格宽度*/</span></div><div class="line">    <span class="attribute">max-width</span>: <span class="number">65em</span>; <span class="comment">/*表格最大宽度，避免表格过宽*/</span></div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#dedede</span>; <span class="comment">/*表格外边框设置*/</span></div><div class="line">    <span class="attribute">margin</span>: <span class="number">15px</span> auto; <span class="comment">/*外边距*/</span></div><div class="line">    <span class="attribute">border-collapse</span>: collapse; <span class="comment">/*使用单一线条的边框*/</span></div><div class="line">    <span class="attribute">empty-cells</span>: show; <span class="comment">/*单元格无内容依旧绘制边框*/</span></div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">table-layout</span>: automatic;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">th</span>,<span class="selector-tag">table</span> <span class="selector-tag">td</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">35px</span>; <span class="comment">/*统一每一行的默认高度*/</span></div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#dedede</span>; <span class="comment">/*内部边框样式*/</span></div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">10px</span>; <span class="comment">/*内边距*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">th</span> &#123;</div><div class="line">    <span class="attribute">font-weight</span>: bold; <span class="comment">/*加粗*/</span></div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>; <span class="comment">/*内容居中，加上 !important 避免被 Markdown 样式覆盖*/</span></div><div class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(158,188,226,0.2); <span class="comment">/*背景色*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">th</span> &#123;</div><div class="line">    <span class="attribute">white-space</span>: nowrap; <span class="comment">/*表头内容强制在一行显示*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">td</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</div><div class="line">  <span class="comment">/*首列不换行*/</span></div><div class="line">    <span class="attribute">white-space</span>: nowrap;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#efefef</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h2><ol>
 <li>安装Git<br><a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git for Windows</a></li>
 <li>配置Git<br>参考<a href="/2017/01/20/git-command/" title="Git语法备忘录">Git语法备忘录</a></li>
 </ol>

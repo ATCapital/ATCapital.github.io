@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="Here is a list of the different modes of opening a file:    code meaning     r Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.   rb O">
+<meta name="description" content="python 打开文件的不同模式">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python OS">
 <meta property="og:url" content="https://suplandz.github.io/2017/04/15/python-OS/index.html">
 <meta property="og:site_name" content="AT Capital">
-<meta property="og:description" content="Here is a list of the different modes of opening a file:    code meaning     r Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.   rb O">
-<meta property="og:updated_time" content="2017-04-29T11:48:43.000Z">
+<meta property="og:description" content="python 打开文件的不同模式">
+<meta property="og:updated_time" content="2017-04-29T13:53:30.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python OS">
-<meta name="twitter:description" content="Here is a list of the different modes of opening a file:    code meaning     r Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.   rb O">
+<meta name="twitter:description" content="python 打开文件的不同模式">
 
 
 
@@ -413,63 +413,62 @@
       
 
       
-        <a id="more"></a>
-<p>Here is a list of the different modes of opening a file:</p>
+        <p>python 打开文件的不同模式<br><a id="more"></a></p>
 <table>
 <thead>
 <tr>
-<th>code</th>
-<th>meaning</th>
+<th>模式</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>r</td>
-<td>Opens a file for reading only. The file pointer is placed at the beginning of the file. This is the default mode.</td>
+<td>只读，指针在文档起始位置</td>
 </tr>
 <tr>
 <td>rb</td>
-<td>Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.</td>
+<td>二进制只读，指针在文档起始位置，推荐</td>
 </tr>
 <tr>
 <td>r+</td>
-<td>Opens a file for both reading and writing. The file pointer will be at the beginning of the file.</td>
+<td>读写，指针在文档起始位置</td>
 </tr>
 <tr>
 <td>rb+</td>
-<td>Opens a file for both reading and writing in binary format. The file pointer will be at the beginning of the file.</td>
+<td>二进制读写打开，指针在文档起始位置</td>
 </tr>
 <tr>
 <td>w</td>
-<td>Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</td>
+<td>只写，当文档存在时直接覆盖，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>wb</td>
-<td>Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.</td>
+<td>二进制只写，当文档存在时直接覆盖，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>w+</td>
-<td>Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</td>
+<td>读写，当文档存在时直接覆盖，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>wb+</td>
-<td>Opens a file for both writing and reading in binary format. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.</td>
+<td>二进制读写，当文档存在时直接覆盖，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>a</td>
-<td>Opens a file for appending. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</td>
+<td>增补模式，指针在文档结束位置，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>ab</td>
-<td>Opens a file for appending in binary format. The file pointer is at the end of the file if the file exists. That is, the file is in the append mode. If the file does not exist, it creates a new file for writing.</td>
+<td>二进制增补模式，指针在文档结束位置，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>a+</td>
-<td>Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</td>
+<td>增补只读模式，指针在文档结束位置，当文档不存在时创建</td>
 </tr>
 <tr>
 <td>ab+</td>
-<td>Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.</td>
+<td>二进制增补只读模式，指针在文档结束位置，当文档不存在时创建</td>
 </tr>
 </tbody>
 </table>
