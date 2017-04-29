@@ -97,7 +97,7 @@
 <meta property="og:url" content="https://suplandz.github.io/2017/02/05/numpy/index.html">
 <meta property="og:site_name" content="AT Capital">
 <meta property="og:description" content="NumPy使用笔记。">
-<meta property="og:updated_time" content="2017-04-28T14:52:08.066Z">
+<meta property="og:updated_time" content="2017-04-29T00:44:58.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NumPy库使用简介">
 <meta name="twitter:description" content="NumPy使用笔记。">
@@ -349,7 +349,21 @@
         <p>NumPy使用笔记。</p>
 <a id="more"></a>
 <p>实例化ndarray的3个函数方法array，zeros和empty。</p>
-<h2 id="numpy-array"><a href="#numpy-array" class="headerlink" title="numpy.array"></a>numpy.array</h2><p>|创建数组<br>|<code>numpy.array(object, dtype=None, copy=True, order=&#39;K&#39;, subok=False, ndmin=0)</code><br>|<code>&gt;&gt;&gt; np.array([1, 2, 3], dtype=complex)</code><br><code>array([ 1.+0.j,  2.+0.j,  3.+0.j])</code></p>
+<h2 id="numpy-array"><a href="#numpy-array" class="headerlink" title="numpy.array"></a>numpy.array</h2><table>
+<thead>
+<tr>
+<th>创建数组</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>numpy.array(object, dtype=None, copy=True, order=&#39;K&#39;, subok=False, ndmin=0)</code></td>
+</tr>
+<tr>
+<td><code>&gt;&gt;&gt; np.array([1, 2, 3], dtype=complex)</code><br><code>array([ 1.+0.j,  2.+0.j,  3.+0.j])</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="numpy-zeros"><a href="#numpy-zeros" class="headerlink" title="numpy.zeros"></a>numpy.zeros</h2><p>|创建一个用0填充的数组<br>|<code>numpy.zeros(shape, dtype=float, order=&#39;C&#39;)</code><br>|<code>&gt;&gt;&gt; np.zeros((5,), dtype=np.int)</code><br><code>array([0, 0, 0, 0, 0])</code></p>
 <h2 id="numpy-empty"><a href="#numpy-empty" class="headerlink" title="numpy.empty"></a>numpy.empty</h2><p>|生成用随机数填充的数组，速度较快，不推荐使用<br>|<code>numpy.empty(shape, dtype=float, order=&#39;C&#39;)</code><br>|<code>&gt;&gt;&gt; np.empty([2, 2], dtype=int)</code><br><code>array([[-1073741821, -1067949133], [  496041986,    19249760]])  #random</code></p>
 <h2 id="numpy-ndarray类"><a href="#numpy-ndarray类" class="headerlink" title="numpy.ndarray类"></a>numpy.ndarray类</h2><p>ndarray可以进行向量化运算，例如<code>x **2</code>或者<code>np.sqrt(x)</code><br>可以使用<code>x[row][column]</code>查值</p>
