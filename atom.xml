@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://suplandz.github.io/"/>
-  <updated>2017-04-29T11:46:57.000Z</updated>
+  <updated>2017-05-01T07:56:31.880Z</updated>
   <id>https://suplandz.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="https://suplandz.github.io/2017/04/28/sqlite3/"/>
     <id>https://suplandz.github.io/2017/04/28/sqlite3/</id>
     <published>2017-04-28T04:00:00.000Z</published>
-    <updated>2017-04-29T11:46:57.000Z</updated>
+    <updated>2017-05-01T07:56:31.880Z</updated>
     
     <content type="html"><![CDATA[<p>sqlite3学习笔记</p>
 <a id="more"></a>
-<table>
+<h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><table>
 <thead>
 <tr>
 <th style="text-align:left">功能</th>
@@ -43,6 +43,14 @@
 <tr>
 <td style="text-align:left">查询表的详细信息</td>
 <td style="text-align:left"><code>.schema</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><code>.mode column</code></td>
+</tr>
+<tr>
+<td style="text-align:left">设置输出列的宽度</td>
+<td style="text-align:left"><code>.width 10, 20, 10</code></td>
 </tr>
 <tr>
 <td style="text-align:left">创建数据库</td>
@@ -74,7 +82,49 @@
 </tr>
 <tr>
 <td style="text-align:left">选择数据</td>
-<td style="text-align:left"><code>SELECT column1, column2 (*) FROM table_name;</code></td>
+<td style="text-align:left"><code>SELECT column1, column2 (or *) FROM table_name;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">AND/OR/BETWEEN</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:left">EXISTS</td>
+<td style="text-align:left"><code>DELETE FROM employees WHERE EXISTS (SELECT * FROM departments WHERE employees.department_id = departments.department_id AND departments.department_name = &#39;IT&#39;);</code></td>
+</tr>
+<tr>
+<td style="text-align:left">IN/NOT IN</td>
+<td style="text-align:left"><code>IN ( 25, 27 ); # 25或者27</code></td>
+</tr>
+<tr>
+<td style="text-align:left">LIKE</td>
+<td style="text-align:left">相似值进行比较。<code>SELECT * FROM COMPANY WHERE NAME LIKE &#39;Ki%&#39;;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">GLOB</td>
+<td style="text-align:left">和LIKE相似，不同之处在于，它是大小写敏感的。<code>SELECT * FROM COMPANY WHERE NAME GLOB &#39;Ki*&#39;;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">IS NULL</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:left">丨丨</td>
+<td style="text-align:left">连接两个不同的字符串，得到一个新的字符串。</td>
+</tr>
+<tr>
+<td style="text-align:left">UNIQUE</td>
+<td style="text-align:left">UNIQUE 运算符搜索指定表中的每一行，确保唯一性（无重复）。</td>
 </tr>
 </tbody>
 </table>
