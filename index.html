@@ -359,28 +359,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -515,28 +493,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -673,28 +629,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -830,28 +764,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Quant/" itemprop="url" rel="index">
-                    <span itemprop="name">Quant</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -888,25 +800,14 @@
 
       
         
-          
-            <a id="more"></a>
-<p>这篇主要梳理下使用<code>pandas-datareader</code>来获取财经数据进行简单分析的过程。<code>pandas-datareader</code>之前是封装在<code>pandas</code>里，但之后被移除，所以需要单独安装下<code>$ pip install pandas-datareader</code>。行情数据在<code>data</code>类下，调用方法<code>import pandas_datareader.data as web</code>。</p>
-<p><a href="https://pandas-datareader.readthedocs.io/en/latest/index.html" target="_blank" rel="external">Doc说明文档</a></p>
-<ul>
-<li><p>首先使用DataReader函数获取数据。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = web.DataReader(<span class="string">'600030.SS'</span>, <span class="string">'yahoo'</span>, start, end)</div></pre></td></tr></table></figure>
-</li>
-<li><p>计算对数收益率:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">df[<span class="string">'return'</span>] = np.log(df[<span class="string">'Close'</span>] / df[<span class="string">'Close'</span>].shift(<span class="number">1</span>))</div><div class="line">df[[<span class="string">'Close'</span>, <span class="string">'return'</span>]].plot(subplots=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
-<p>可以观察波动率和收盘价的关系。</p>
-</li>
-<li><p>计算移动平均值：<br>使用<a href="/python/2017/01/25/pandas/#pandasdataframerolling"><code>pd.rolling函数</code></a>创建一行新列，再绘图观察即可。具体的代码是：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df[<span class="string">'21d'</span>] = df[<span class="string">'Close'</span>].rolling(windows=<span class="number">21</span>).mean()</div><div class="line">df[[<span class="string">'Close'</span>, <span class="string">'21d'</span>]].plot()</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
-<p>实际上到这里就画出了收盘价线和移动平均线，简单的居于均线趋势分析的方法就可以在这里开始检验了，是不是很简单呢。</p>
-</li>
-</ul>
-
-          
+          <p>一些非常简单的试验。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/09/yahoo-finance/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -997,28 +898,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1155,28 +1034,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1262,7 +1119,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://suplandz.github.io/2017/02/04/xiao-quan-quan/">
+    <link itemprop="mainEntityOfPage" href="https://suplandz.github.io/2017/02/04/guitar-tab/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liu Fangnan">
@@ -1284,8 +1141,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/04/xiao-quan-quan/" itemprop="url">
-                  小拳拳捶你胸口吉他谱
+                <a class="post-title-link" href="/2017/02/04/guitar-tab/" itemprop="url">
+                  吉他谱
                 </a>
               
             
@@ -1312,28 +1169,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/吉他/" itemprop="url" rel="index">
-                    <span itemprop="name">吉他</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1342,9 +1177,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/04/xiao-quan-quan/#comments" itemprop="discussionUrl">
+                <a href="/2017/02/04/guitar-tab/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/02/04/xiao-quan-quan/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/02/04/guitar-tab/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1370,27 +1205,14 @@
 
       
         
-          
-            <a id="more"></a>
-<pre><code>capo:5
-
-C - G - F - G - C
-(｡•ˇ‸ˇ•｡)哼！都怪你 (`ȏ´) 也不哄哄人家(〃′o`)
-C - G - F - G - C
-(〃′o`)人家超想哭的，捶你胸口，老公！大坏蛋！！！(￣^￣)ゞ
-C - G - F - G - C
-(￣^￣)ゞ咩QAQ 捶你胸口 你好讨厌！(=ﾟωﾟ)
-C - G
-(｡•︿•̀｡)大坏蛋(｡•ˇ‸ˇ•｡)，打死你(つд⊂)
-F - G - C
-(｡•︿•̀｡)大坏蛋(｡•ˇ‸ˇ•｡)，打死你(つд⊂)
-F - C - G - Am - F - G - C
-(=ﾟωﾟ)ﾉ要抱抱嘤嘤嘤哼，人家拿小拳拳捶你胸口！！！(｡•︿•̀｡)
-F - C - G - Am - F - G - C
-(=ﾟωﾟ)ﾉ要抱抱嘤嘤嘤哼，人家拿小拳拳捶你胸口！！！(｡•︿•̀｡)
-</code></pre><p><a href="http://www.bilibili.com/video/av8348417/" target="_blank" rel="external">【秋风MusiX】教你如何用吉他把【小拳拳捶你胸口】编成歌</a></p>
-
-          
+          <p>吉他谱记录。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/04/guitar-tab/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1481,28 +1303,6 @@ F - C - G - Am - F - G - C
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Quant/" itemprop="url" rel="index">
-                    <span itemprop="name">Quant</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1639,28 +1439,6 @@ F - C - G - Am - F - G - C
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1795,28 +1573,6 @@ F - C - G - Am - F - G - C
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Quant/" itemprop="url" rel="index">
-                    <span itemprop="name">Quant</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1953,28 +1709,6 @@ F - C - G - Am - F - G - C
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Memo/" itemprop="url" rel="index">
-                    <span itemprop="name">Memo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -2011,7 +1745,7 @@ F - C - G - Am - F - G - C
 
       
         
-          <p>主要记录Git的安装配置和基本语法，最后更新2017/01/20。</p>
+          <p>主要记录Git的安装配置和基本语法。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/01/20/git-command/#more" rel="contents">
@@ -2109,28 +1843,6 @@ F - C - G - Am - F - G - C
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Memo/" itemprop="url" rel="index">
-                    <span itemprop="name">Memo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -2267,28 +1979,6 @@ F - C - G - Am - F - G - C
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Memo/" itemprop="url" rel="index">
-                    <span itemprop="name">Memo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -2424,28 +2114,6 @@ F - C - G - Am - F - G - C
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Memo/" itemprop="url" rel="index">
-                    <span itemprop="name">Memo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -2573,15 +2241,6 @@ F - C - G - Am - F - G - C
             </div>
           
 
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
           
 
           

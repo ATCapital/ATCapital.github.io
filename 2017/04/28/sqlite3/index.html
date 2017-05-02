@@ -99,7 +99,7 @@
 <meta property="og:url" content="https://suplandz.github.io/2017/04/28/sqlite3/index.html">
 <meta property="og:site_name" content="AT Capital">
 <meta property="og:description" content="sqlite3学习笔记">
-<meta property="og:updated_time" content="2017-05-01T07:56:31.880Z">
+<meta property="og:updated_time" content="2017-05-02T08:55:21.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqlite3笔记">
 <meta name="twitter:description" content="sqlite3学习笔记">
@@ -356,28 +356,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -415,7 +393,7 @@
       
         <p>sqlite3学习笔记</p>
 <a id="more"></a>
-<h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><table>
+<h1 id="基础运用"><a href="#基础运用" class="headerlink" title="基础运用"></a>基础运用</h1><h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><table>
 <thead>
 <tr>
 <th style="text-align:left">功能</th>
@@ -519,6 +497,17 @@
 </tr>
 </tbody>
 </table>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> COMPANY <span class="keyword">WHERE</span> SALARY = <span class="number">10000</span>; <span class="comment">-- 布尔表达式</span></div><div class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> <span class="string">"RECORDS"</span> <span class="keyword">FROM</span> COMPANY; <span class="comment">-- 数值表达式</span></div><div class="line"><span class="keyword">SELECT</span> <span class="keyword">CURRENT_TIMESTAMP</span>; <span class="comment">-- 日期表达式</span></div></pre></td></tr></table></figure>
+<h2 id="Where"><a href="#Where" class="headerlink" title="Where"></a>Where</h2><p>体会下面两者的区别。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> AGE <span class="keyword">FROM</span> COMPANY</div><div class="line"><span class="keyword">WHERE</span> <span class="keyword">EXISTS</span> (<span class="keyword">SELECT</span> AGE <span class="keyword">FROM</span> COMPANY <span class="keyword">WHERE</span> SALARY &gt; <span class="number">65000</span>);</div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> COMPANY</div><div class="line"><span class="keyword">WHERE</span> AGE &gt; (<span class="keyword">SELECT</span> AGE <span class="keyword">FROM</span> COMPANY <span class="keyword">WHERE</span> SALARY &gt; <span class="number">65000</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">UPDATE</span> COMPANY <span class="keyword">SET</span> ADDRESS = <span class="string">'Texas'</span> <span class="keyword">WHERE</span> <span class="keyword">ID</span> = <span class="number">6</span>;</div><div class="line"><span class="keyword">UPDATE</span> COMPANY <span class="keyword">SET</span> ADDRESS = <span class="string">'Texas'</span>, SALARY = <span class="number">20000.00</span>;</div></pre></td></tr></table></figure>
+<h2 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> COMPANY <span class="keyword">WHERE</span> <span class="keyword">ID</span> = <span class="number">7</span>;</div><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> COMPANY; <span class="comment">-- delete all</span></div></pre></td></tr></table></figure>
+<h2 id="Like"><a href="#Like" class="headerlink" title="Like"></a>Like</h2><p>百分号（%）代表零个、一个或多个数字或字符。下划线（_）代表一个单一的数字或字符。这些符号可以被组合使用。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WHERE SALARY LIKE '_2%3' <span class="comment">-- 查找第二位为 2，且以 3 结尾的任意值</span></div></pre></td></tr></table></figure></p>
+<h2 id="Glob"><a href="#Glob" class="headerlink" title="Glob"></a>Glob</h2><p>星号（*）代表零个、一个或多个数字或字符。问号（?）代表一个单一的数字或字符。这些符号可以被组合使用。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WHERE SALARY GLOB '?2*3' -- 查找第二位为 2，且以 3 结尾的任意值</div></pre></td></tr></table></figure></p>
+<h2 id="Limit"><a href="#Limit" class="headerlink" title="Limit"></a>Limit</h2><p>限制由 SELECT 语句返回的数据数量。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> COMPANY <span class="keyword">LIMIT</span> <span class="number">3</span> <span class="keyword">OFFSET</span> <span class="number">2</span>; <span class="comment">-- 从第三位开始提取 3 个记录</span></div></pre></td></tr></table></figure></p>
+<h2 id="Order-By"><a href="#Order-By" class="headerlink" title="Order By"></a>Order By</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> COMPANY <span class="keyword">ORDER</span> <span class="keyword">BY</span> SALARY <span class="keyword">ASC</span>; <span class="comment">-- 升序</span></div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> COMPANY <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">NAME</span> <span class="keyword">DESC</span>; <span class="comment">-- 降序</span></div></pre></td></tr></table></figure>
+<h2 id="Group-By"><a href="#Group-By" class="headerlink" title="Group By"></a>Group By</h2><p>在 SELECT 语句中，GROUP BY 子句放在 WHERE 子句之后，放在 ORDER BY 子句之前。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">NAME</span>, <span class="keyword">SUM</span>(SALARY)</div><div class="line"><span class="keyword">FROM</span> COMPANY <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">NAME</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">NAME</span> <span class="keyword">DESC</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="Having"><a href="#Having" class="headerlink" title="Having"></a>Having</h2><p>Group by的条件语句，必须连用。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> COMPANY <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">name</span> <span class="keyword">HAVING</span> <span class="keyword">count</span>(<span class="keyword">name</span>) &gt; <span class="number">2</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="Distinct"><a href="#Distinct" class="headerlink" title="Distinct"></a>Distinct</h2><p>与 SELECT 语句一起使用，用来消除所有重复的记录。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> COMPANY;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -655,15 +644,6 @@
           
 
           
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
 
           
             
@@ -712,7 +692,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本功能"><span class="nav-number">1.</span> <span class="nav-text">基本功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算"><span class="nav-number">2.</span> <span class="nav-text">逻辑运算</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础运用"><span class="nav-number">1.</span> <span class="nav-text">基础运用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本功能"><span class="nav-number">1.1.</span> <span class="nav-text">基本功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式"><span class="nav-number">1.3.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Where"><span class="nav-number">1.4.</span> <span class="nav-text">Where</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Update"><span class="nav-number">1.5.</span> <span class="nav-text">Update</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete"><span class="nav-number">1.6.</span> <span class="nav-text">Delete</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Like"><span class="nav-number">1.7.</span> <span class="nav-text">Like</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Glob"><span class="nav-number">1.8.</span> <span class="nav-text">Glob</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limit"><span class="nav-number">1.9.</span> <span class="nav-text">Limit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Order-By"><span class="nav-number">1.10.</span> <span class="nav-text">Order By</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Group-By"><span class="nav-number">1.11.</span> <span class="nav-text">Group By</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Having"><span class="nav-number">1.12.</span> <span class="nav-text">Having</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distinct"><span class="nav-number">1.13.</span> <span class="nav-text">Distinct</span></a></li></ol></li></ol></div>
             
 
           </div>
