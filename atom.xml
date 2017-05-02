@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://suplandz.github.io/"/>
-  <updated>2017-05-02T08:55:21.853Z</updated>
+  <updated>2017-05-02T08:55:21.000Z</updated>
   <id>https://suplandz.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://suplandz.github.io/2017/04/28/sqlite3/"/>
     <id>https://suplandz.github.io/2017/04/28/sqlite3/</id>
     <published>2017-04-28T04:00:00.000Z</published>
-    <updated>2017-05-02T08:55:21.853Z</updated>
+    <updated>2017-05-02T08:55:21.000Z</updated>
     
     <content type="html"><![CDATA[<p>sqlite3学习笔记</p>
 <a id="more"></a>
@@ -157,7 +157,7 @@
     <link href="https://suplandz.github.io/2017/04/15/python-OS/"/>
     <id>https://suplandz.github.io/2017/04/15/python-OS/</id>
     <published>2017-04-15T04:00:00.000Z</published>
-    <updated>2017-05-02T07:58:33.976Z</updated>
+    <updated>2017-05-02T07:58:33.000Z</updated>
     
     <content type="html"><![CDATA[<p>python 打开文件的不同模式<br><a id="more"></a></p>
 <table>
@@ -234,7 +234,7 @@
     <link href="https://suplandz.github.io/2017/02/15/python-lib/"/>
     <id>https://suplandz.github.io/2017/02/15/python-lib/</id>
     <published>2017-02-15T04:00:00.000Z</published>
-    <updated>2017-05-02T07:58:33.487Z</updated>
+    <updated>2017-05-02T07:58:33.000Z</updated>
     
     <content type="html"><![CDATA[<p>Python基本库查阅<br><a href="https://docs.python.org/2/library/index.html" target="_blank" rel="external">参考资料</a></p>
 <a id="more"></a>
@@ -272,7 +272,7 @@
     <link href="https://suplandz.github.io/2017/02/09/yahoo-finance/"/>
     <id>https://suplandz.github.io/2017/02/09/yahoo-finance/</id>
     <published>2017-02-09T09:00:00.000Z</published>
-    <updated>2017-05-02T08:10:45.693Z</updated>
+    <updated>2017-05-02T08:10:45.000Z</updated>
     
     <content type="html"><![CDATA[<p>一些非常简单的试验。<br><a id="more"></a></p>
 <p>这篇主要梳理下使用<code>pandas-datareader</code>来获取财经数据进行简单分析的过程。<code>pandas-datareader</code>之前是封装在<code>pandas</code>里，但之后被移除，所以需要单独安装下<code>$ pip install pandas-datareader</code>。行情数据在<code>data</code>类下，调用方法<code>import pandas_datareader.data as web</code>。</p>
@@ -310,7 +310,7 @@
     <link href="https://suplandz.github.io/2017/02/06/matplotlib/"/>
     <id>https://suplandz.github.io/2017/02/06/matplotlib/</id>
     <published>2017-02-06T09:00:00.000Z</published>
-    <updated>2017-05-02T07:58:32.398Z</updated>
+    <updated>2017-05-02T07:58:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>matplotlib使用笔记。</p>
 <a id="more"></a>
@@ -350,40 +350,21 @@
     <link href="https://suplandz.github.io/2017/02/05/numpy/"/>
     <id>https://suplandz.github.io/2017/02/05/numpy/</id>
     <published>2017-02-05T08:00:00.000Z</published>
-    <updated>2017-05-02T07:58:31.784Z</updated>
+    <updated>2017-05-02T14:53:46.469Z</updated>
     
     <content type="html"><![CDATA[<p>NumPy使用笔记。</p>
 <a id="more"></a>
-<p>实例化ndarray的3个函数方法array，zeros和empty。</p>
-<h2 id="numpy-array"><a href="#numpy-array" class="headerlink" title="numpy.array"></a>numpy.array</h2><table>
-<thead>
-<tr>
-<th>创建数组</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>numpy.array(object, dtype=None, copy=True, order=&#39;K&#39;, subok=False, ndmin=0)</code></td>
-</tr>
-<tr>
-<td><code>&gt;&gt;&gt; np.array([1, 2, 3], dtype=complex)</code><br><code>array([ 1.+0.j,  2.+0.j,  3.+0.j])</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="numpy-zeros"><a href="#numpy-zeros" class="headerlink" title="numpy.zeros"></a>numpy.zeros</h2><p>|创建一个用0填充的数组<br>|<code>numpy.zeros(shape, dtype=float, order=&#39;C&#39;)</code><br>|<code>&gt;&gt;&gt; np.zeros((5,), dtype=np.int)</code><br><code>array([0, 0, 0, 0, 0])</code></p>
-<h2 id="numpy-empty"><a href="#numpy-empty" class="headerlink" title="numpy.empty"></a>numpy.empty</h2><p>|生成用随机数填充的数组，速度较快，不推荐使用<br>|<code>numpy.empty(shape, dtype=float, order=&#39;C&#39;)</code><br>|<code>&gt;&gt;&gt; np.empty([2, 2], dtype=int)</code><br><code>array([[-1073741821, -1067949133], [  496041986,    19249760]])  #random</code></p>
-<h2 id="numpy-ndarray类"><a href="#numpy-ndarray类" class="headerlink" title="numpy.ndarray类"></a>numpy.ndarray类</h2><p>ndarray可以进行向量化运算，例如<code>x **2</code>或者<code>np.sqrt(x)</code><br>可以使用<code>x[row][column]</code>查值</p>
-<p><strong>常用属性</strong>（使用时不加括号）：</p>
-<p>Attributes     |描述                     |例子<br>T             |转置类似<code>.transpose()</code>    |<code>x.T</code><br>shape         |显示数组维度             |<code>x.shape</code></p>
-<p><strong>常用方法</strong>：</p>
-<p>Methods         |描述                 |例子<br>sum(axis, dtype)|按照axis, dtype求和     |<br>cumsum(axis, dtype)|按照axis, dtype累计求和|<br>std(axis, dtype)|按照axis, dtype求标准差|</p>
-<h2 id="numpy-dtype类"><a href="#numpy-dtype类" class="headerlink" title="numpy.dtype类"></a>numpy.dtype类</h2><p>描述数组的存储类型，所有的数据类型是这个类的实例化。<a href="https://docs.scipy.org/doc/numpy/user/basics.types.html#data-types" target="_blank" rel="external">详细参数</a></p>
-<p>|数据类型|<code>int8 float_</code><br>|使用方式|<code>x = np.float32(1.0)</code><br><code>d = np.dtype(int)</code><br>|结构数组|<code>dt = np.dtype([(&#39;Name&#39;, &#39;S10&#39;), [(&#39;Age&#39;, &#39;i4&#39;)])</code><br><code>s = np.array([(&#39;Smith&#39;, 45), (&#39;Jones&#39;, 53)], dtype = dt)</code></p>
-<p>numpy自带sin，使用时注意不要被math覆盖，导入时import math，math.sin/np.sin</p>
-<h2 id="numpy-random-standard-normal"><a href="#numpy-random-standard-normal" class="headerlink" title="numpy.random.standard_normal"></a>numpy.random.standard_normal</h2><p>|模拟标准正态分布的样本<br>|<code>numpy.random.standard_normal(size=None)</code><br>|<code>s = np.random.standard_normal((4,3))</code></p>
-<h2 id="numpy-log，numpy-log10，numpy-log2，numpy-log1p"><a href="#numpy-log，numpy-log10，numpy-log2，numpy-log1p" class="headerlink" title="numpy.log，numpy.log10，numpy.log2，numpy.log1p"></a>numpy.log，numpy.log10，numpy.log2，numpy.log1p</h2><p>|log对数，可以输入array，list。log1p为1plus计算log(1+x)<br>|<code>numpy.log(x[, out]) = &lt;ufunc &#39;log&#39;&gt;</code></p>
-<h2 id="numpy-random-randint"><a href="#numpy-random-randint" class="headerlink" title="numpy.random.randint"></a>numpy.random.randint</h2><p>|返回随机整数，int。<br>|<code>numpy.random.randint(low, high=None, size=None, dtype=&#39;l&#39;)</code></p>
-<h2 id="numpy-allclose"><a href="#numpy-allclose" class="headerlink" title="numpy.allclose"></a>numpy.allclose</h2><p>|返回True如果两个数组在一定误差范围内<code>absolute(a - b) &lt;= (atol + rtol * absolute(b))</code><br>|<code>numpy.allclose(a, b, rtol=1e-05, atol=1e-08, equal_nan=False)</code><br>|<code>np.allclose([1.0, np.nan], [1.0, np.nan], equal_nan=True)  # True</code></p>
+<h1 id="Quick-Sheet"><a href="#Quick-Sheet" class="headerlink" title="Quick Sheet"></a>Quick Sheet</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">arr = np.array([]) <span class="comment"># 创立numpy数组</span></div><div class="line">arr.T <span class="comment"># 转置</span></div><div class="line">arr.shape <span class="comment"># 显示数组结构</span></div><div class="line">arr.reshape <span class="comment"># 重构数组</span></div><div class="line">np.sum(arr) <span class="comment"># 求和</span></div><div class="line">np.mean(arr) <span class="comment"># 均数</span></div><div class="line">np.std(arr) <span class="comment"># 标准差</span></div><div class="line">np.sqrt(arr) <span class="comment"># 平方根</span></div><div class="line">np.dot(arr1, arr2) <span class="comment"># 点积</span></div><div class="line">np.vectorize() <span class="comment"># 向量化 vfunc = np.vectorize(myfunc)</span></div></pre></td></tr></table></figure>
+<p>注意 <code>np.sin</code> 不要与 <code>math.sin</code> 覆盖。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> math</div><div class="line">math.sin()</div></pre></td></tr></table></figure></p>
+<h1 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h1><h2 id="Arrary-Creation"><a href="#Arrary-Creation" class="headerlink" title="Arrary Creation"></a>Arrary Creation</h2><h3 id="numpy-array"><a href="#numpy-array" class="headerlink" title="numpy.array"></a>numpy.array</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 创建普通数组</span></div><div class="line">numpy.array(object, dtype=<span class="keyword">None</span>, copy=<span class="keyword">True</span>, order=<span class="string">'K'</span>, subok=<span class="keyword">False</span>, ndmin=<span class="number">0</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], dtype=complex)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>array([ <span class="number">1.</span>+<span class="number">0.j</span>,  <span class="number">2.</span>+<span class="number">0.j</span>,  <span class="number">3.</span>+<span class="number">0.j</span>])</div></pre></td></tr></table></figure>
+<h3 id="numpy-zeros"><a href="#numpy-zeros" class="headerlink" title="numpy.zeros"></a>numpy.zeros</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 创建一个用0填充的数组</span></div><div class="line">numpy.zeros(shape, dtype=float, order=<span class="string">'C'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.zeros((<span class="number">5</span>,), dtype=np.int)</div><div class="line">array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</div></pre></td></tr></table></figure>
+<h3 id="numpy-empty"><a href="#numpy-empty" class="headerlink" title="numpy.empty"></a>numpy.empty</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 生成用随机数填充的数组，速度较快，不推荐使用</span></div><div class="line">numpy.empty(shape, dtype=float, order=<span class="string">'C'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>np.empty([<span class="number">2</span>, <span class="number">2</span>], dtype=int)</div><div class="line">array([[<span class="number">-1073741821</span>, <span class="number">-1067949133</span>], [<span class="number">496041986</span>, <span class="number">19249760</span>]]) <span class="comment"># random</span></div></pre></td></tr></table></figure>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><h2 id="Arrary-Object"><a href="#Arrary-Object" class="headerlink" title="Arrary Object"></a>Arrary Object</h2><h3 id="ndarray"><a href="#ndarray" class="headerlink" title="ndarray"></a>ndarray</h3><p>创立的数组里属于此类，此类可以进行向量化运算，可以使用 <code>x[row][column]</code> 查值。<br>常用方法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">np.sum(axis, dtype) <span class="comment"># 按照axis, dtype求和</span></div><div class="line">np.cumsum(axis, dtype) <span class="comment"># 按照axis, dtype累计求和</span></div><div class="line">np.std(axis, dtype) <span class="comment"># 按照axis, dtype求标准差</span></div></pre></td></tr></table></figure></p>
+<h3 id="dtype"><a href="#dtype" class="headerlink" title="dtype"></a>dtype</h3><p><a href="https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html" target="_blank" rel="external">Data type</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = np.float32(<span class="number">1.0</span>)</div><div class="line">d = np.dtype(int)</div><div class="line"><span class="comment"># 结构数组</span></div><div class="line">dt = np.dtype([(<span class="string">'Name'</span>, <span class="string">'S10'</span>), [(<span class="string">'Age'</span>, <span class="string">'i4'</span>)])</div><div class="line">s = np.array([(<span class="string">'Smith'</span>, <span class="number">45</span>), (<span class="string">'Jones'</span>, <span class="number">53</span>)], dtype = dt)</div></pre></td></tr></table></figure></p>
+<h2 id="Routines"><a href="#Routines" class="headerlink" title="Routines"></a>Routines</h2><h3 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">numpy.random.standard_normal(size=<span class="keyword">None</span>) <span class="comment"># 模拟标准正态分布的样本</span></div><div class="line">s = np.random.standard_normal((<span class="number">4</span>,<span class="number">3</span>))</div><div class="line">numpy.random.randint(low, high=<span class="keyword">None</span>, size=<span class="keyword">None</span>, dtype=<span class="string">'l'</span>) <span class="comment"># 返回随机整数, int</span></div></pre></td></tr></table></figure>
+<h3 id="Mathematical-functions"><a href="#Mathematical-functions" class="headerlink" title="Mathematical functions"></a>Mathematical functions</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">np.log([<span class="number">1</span>, np.e, np.e**<span class="number">2</span>, <span class="number">0</span>])</div><div class="line"><span class="comment"># numpy.log，numpy.log10，numpy.log2，numpy.log1p</span></div><div class="line"><span class="comment"># log1p == log(1+x)</span></div></pre></td></tr></table></figure>
+<h3 id="Logic-functions"><a href="#Logic-functions" class="headerlink" title="Logic functions"></a>Logic functions</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># allclose</span></div><div class="line"><span class="comment"># 返回True如果两个数组在一定误差范围内`absolute(a - b) &lt;= (atol + rtol * absolute(b))</span></div><div class="line">numpy.allclose(a, b, rtol=<span class="number">1e-05</span>, atol=<span class="number">1e-08</span>, equal_nan=<span class="keyword">False</span>)</div><div class="line">np.allclose([<span class="number">1.0</span>, np.nan], [<span class="number">1.0</span>, np.nan], equal_nan=<span class="keyword">True</span>)  <span class="comment"># True</span></div></pre></td></tr></table></figure>
+<p>Ref:<br>[1]: <a href="https://docs.scipy.org/doc/numpy/contents.html" target="_blank" rel="external">NumPy manual contents</a></p>
 ]]></content>
     
     <summary type="html">
@@ -402,7 +383,7 @@
     <link href="https://suplandz.github.io/2017/02/04/guitar-tab/"/>
     <id>https://suplandz.github.io/2017/02/04/guitar-tab/</id>
     <published>2017-02-04T10:00:00.000Z</published>
-    <updated>2017-05-02T08:09:46.727Z</updated>
+    <updated>2017-05-02T08:09:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>吉他谱记录。<br><a id="more"></a></p>
 <h2 id="小拳拳捶你胸口"><a href="#小拳拳捶你胸口" class="headerlink" title="小拳拳捶你胸口"></a>小拳拳捶你胸口</h2><table>
@@ -475,7 +456,7 @@
     <link href="https://suplandz.github.io/2017/02/02/strategy/"/>
     <id>https://suplandz.github.io/2017/02/02/strategy/</id>
     <published>2017-02-02T10:00:00.000Z</published>
-    <updated>2017-05-02T07:58:30.398Z</updated>
+    <updated>2017-05-02T07:58:30.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>策略</strong>-&gt;系统-&gt;执行-&gt;反馈</p>
 <a id="more"></a>
@@ -537,7 +518,7 @@
     <link href="https://suplandz.github.io/2017/01/25/pandas/"/>
     <id>https://suplandz.github.io/2017/01/25/pandas/</id>
     <published>2017-01-25T08:00:00.000Z</published>
-    <updated>2017-05-02T08:11:24.145Z</updated>
+    <updated>2017-05-02T07:58:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>Pandas使用笔记。<a href="http://pandas.pydata.org/pandas-docs/stable/api.html" target="_blank" rel="external">参考资料</a></p>
 <a id="more"></a>
@@ -804,7 +785,7 @@
     <link href="https://suplandz.github.io/2017/01/22/system/"/>
     <id>https://suplandz.github.io/2017/01/22/system/</id>
     <published>2017-01-22T10:00:00.000Z</published>
-    <updated>2017-05-02T07:57:48.840Z</updated>
+    <updated>2017-05-02T07:57:48.000Z</updated>
     
     <content type="html"><![CDATA[<p>整理量化策略搭建的主流策略，从数据中发现价值。<br><a id="more"></a></p>
 <ol>
@@ -842,7 +823,7 @@
     <link href="https://suplandz.github.io/2017/01/20/git-command/"/>
     <id>https://suplandz.github.io/2017/01/20/git-command/</id>
     <published>2017-01-20T05:00:00.000Z</published>
-    <updated>2017-05-02T08:11:02.503Z</updated>
+    <updated>2017-05-02T08:11:02.000Z</updated>
     
     <content type="html"><![CDATA[<p>主要记录Git的安装配置和基本语法。</p>
 <a id="more"></a>
@@ -880,7 +861,7 @@
     <link href="https://suplandz.github.io/2017/01/18/how-to-use-markdown/"/>
     <id>https://suplandz.github.io/2017/01/18/how-to-use-markdown/</id>
     <published>2017-01-18T05:00:00.000Z</published>
-    <updated>2017-05-02T07:57:51.640Z</updated>
+    <updated>2017-05-02T07:57:51.000Z</updated>
     
     <content type="html"><![CDATA[<p>MarkDown语法笔记。<br><a id="more"></a><br>如果你想要依赖 Markdown 来插入 <code>&lt;br /&gt;</code> 标签的话，在插入处先按入两个以上的空格然后回车。</p>
 <h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>Sublime + 一款配色主题即可。主题文件放在 <code>Sublime/Preferences/Browse Packages</code><br>或者ATOM + 自带的preview（control + shift + M）。</p>
@@ -937,7 +918,7 @@
     <link href="https://suplandz.github.io/2017/01/17/useful-links/"/>
     <id>https://suplandz.github.io/2017/01/17/useful-links/</id>
     <published>2017-01-17T11:00:56.000Z</published>
-    <updated>2017-05-02T07:57:52.125Z</updated>
+    <updated>2017-05-02T07:57:52.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><a href="http://blog.csdn.net/zhang1027963459/article/details/50478340" target="_blank" rel="external">Git代码</a></li>
@@ -962,7 +943,7 @@
     <link href="https://suplandz.github.io/2017/01/16/blog-set-up/"/>
     <id>https://suplandz.github.io/2017/01/16/blog-set-up/</id>
     <published>2017-01-16T09:00:56.000Z</published>
-    <updated>2017-05-02T07:58:29.127Z</updated>
+    <updated>2017-05-02T07:57:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>从零教你搭博客。<br><a id="more"></a><br>Github Pages基于静态页面，目前有两大主流框架，分别是Hexo和Jekyll。两个框架我都用过一段时间，最终我还是决定Hexo，无他，唯主题好看。两种框架都是用markdown语法，下面简单介绍下两种不同框架的搭建。</p>
 <h2 id="Jekyll框架"><a href="#Jekyll框架" class="headerlink" title="Jekyll框架"></a>Jekyll框架</h2><h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><ol>
