@@ -99,7 +99,7 @@
 <meta property="og:url" content="https://suplandz.github.io/2017/01/25/pandas/index.html">
 <meta property="og:site_name" content="AT Capital">
 <meta property="og:description" content="Pandas使用笔记。参考资料">
-<meta property="og:updated_time" content="2017-05-02T07:58:29.000Z">
+<meta property="og:updated_time" content="2017-05-03T05:04:07.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pandas库使用简介">
 <meta name="twitter:description" content="Pandas使用笔记。参考资料">
@@ -393,99 +393,11 @@
       
         <p>Pandas使用笔记。<a href="http://pandas.pydata.org/pandas-docs/stable/api.html" target="_blank" rel="external">参考资料</a></p>
 <a id="more"></a>
-<h1 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h1><h2 id="pandas-read-csv"><a href="#pandas-read-csv" class="headerlink" title="pandas.read_csv"></a>pandas.read_csv</h2><p>读取csv文件</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">格式</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">filepath/buffer</td>
-<td style="text-align:left">str</td>
-<td style="text-align:left"><code>./data/table.csv</code></td>
-</tr>
-<tr>
-<td style="text-align:left">sep</td>
-<td style="text-align:left">str, default ‘,’</td>
-<td style="text-align:left">原始数据间分隔符</td>
-</tr>
-<tr>
-<td style="text-align:left">header</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">原始数据标题行的位置</td>
-</tr>
-<tr>
-<td style="text-align:left">index_col</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">原始数据index位置</td>
-</tr>
-<tr>
-<td style="text-align:left">parse_dates</td>
-<td style="text-align:left">boolean or int</td>
-<td style="text-align:left">解析索引列或者其他列的日期</td>
-</tr>
-<tr>
-<td style="text-align:left">dayfirst</td>
-<td style="text-align:left">boolean, default False</td>
-<td style="text-align:left">DD/MM格式用来解析日期格式</td>
-</tr>
-</tbody>
-</table>
-<h1 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h1><h2 id="pandas-date-range"><a href="#pandas-date-range" class="headerlink" title="pandas.date_range"></a>pandas.date_range</h2><p>使用<code>pandas.date_range</code>生成<code>DatetimeIndex</code>对象<br><code>pandas.date_range(start=None, end=None, periods=None, freq=&#39;D&#39;, tz=None, normalize=False, name=None, closed=None, **kwargs)[source]</code></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">格式</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">start</td>
-<td style="text-align:left">string/datetime-like</td>
-<td style="text-align:left">日期左界</td>
-</tr>
-<tr>
-<td style="text-align:left">end</td>
-<td style="text-align:left">string/datetime-like</td>
-<td style="text-align:left">日期右界</td>
-</tr>
-<tr>
-<td style="text-align:left">periods</td>
-<td style="text-align:left">integer/None</td>
-<td style="text-align:left">期数</td>
-</tr>
-<tr>
-<td style="text-align:left">freq</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">可以使用5D（5天）<a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases" target="_blank" rel="external">更多参数</a></td>
-</tr>
-<tr>
-<td style="text-align:left">tz</td>
-<td style="text-align:left">string/None</td>
-<td style="text-align:left">时区</td>
-</tr>
-<tr>
-<td style="text-align:left">normalize</td>
-<td style="text-align:left">bool</td>
-<td style="text-align:left">将start，end规划为午夜</td>
-</tr>
-<tr>
-<td style="text-align:left">name</td>
-<td style="text-align:left">string</td>
-<td style="text-align:left">结果索引名称</td>
-</tr>
-</tbody>
-</table>
-<p>可以使用<code>df.index</code>将日期赋值给索引<br><code>np.array(df)</code>将<code>DateFrame</code>转回<code>ndarray</code>对象</p>
-<h2 id="pandas-to-datetime"><a href="#pandas-to-datetime" class="headerlink" title="pandas.to_datetime"></a>pandas.to_datetime</h2><p><a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html?highlight=to_datetime#pandas.to_datetime" target="_blank" rel="external">参考</a></p>
-<p>|将参数转成时间格式<br>|<code>pandas.to_datetime(*args, **kwargs)</code><br>|<code>pd.to_datetime([&#39;2009/07/31&#39;, &#39;asd&#39;], errors=&#39;raise&#39;)</code><br><code>ValueError: Unknown string format</code></p>
-<h1 id="DataFrame类"><a href="#DataFrame类" class="headerlink" title="DataFrame类"></a>DataFrame类</h1><p>|创建<code>dataframe</code>对象。<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" target="_blank" rel="external">doc</a><br>|<code>class pandas.DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)</code><br>|<code>df = DataFrame(data=d, index=index)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div></pre></td></tr></table></figure>
+<h2 id="IO-Tools"><a href="#IO-Tools" class="headerlink" title="IO Tools"></a>IO Tools</h2><h3 id="Flat-File"><a href="#Flat-File" class="headerlink" title="Flat File"></a>Flat File</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># CSV</span></div><div class="line">df = pd.read_csv(<span class="string">'foo.csv'</span>, index_col=<span class="number">0</span>, parse_dates=<span class="keyword">True</span>)</div><div class="line"><span class="comment"># or index_col='date' 将data列作为index，并且解析日期</span></div><div class="line">pd.read_csv(<span class="string">'tmp.csv'</span>, dayfirst=<span class="keyword">True</span>, parse_dates=[<span class="number">0</span>]) <span class="comment"># 以DD/MM解析首列信息</span></div><div class="line">df = pd.read_csv(<span class="string">'tmp.csv'</span>, sep=<span class="string">'|'</span>, thousands=<span class="string">','</span>)</div><div class="line"><span class="comment"># Patient1|123,000|x &gt;&gt;&gt; 0 Patient1 123000 x</span></div><div class="line">data = <span class="string">'skip this skip it\na,b,c\n1,2,3\n4,5,6\n7,8,9'</span></div><div class="line">pd.read_csv(StringIO(data), header=<span class="number">1</span>)</div><div class="line"><span class="comment"># header是标题行的起始位置，None就是没有，0就是第一行</span></div></pre></td></tr></table></figure>
+<h2 id="Time-Series"><a href="#Time-Series" class="headerlink" title="Time Series"></a>Time Series</h2><h3 id="Timestamps"><a href="#Timestamps" class="headerlink" title="Timestamps"></a>Timestamps</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Time Stamp</span></div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line">pd.Timestamp(datetime(<span class="number">2012</span>, <span class="number">5</span>, <span class="number">1</span>)) <span class="comment"># Timestamp('2012-05-01 00:00:00')</span></div><div class="line">pd.Timestamp(<span class="string">'2012-05-01'</span>)</div><div class="line">pd.Timestamp(<span class="number">2012</span>, <span class="number">5</span>, <span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment"># Converting to Timestamps</span></div><div class="line">pd.to_datetime(pd.Series([<span class="string">'Jul 31, 2009'</span>, <span class="string">'2010-01-10'</span>, <span class="keyword">None</span>]))</div><div class="line">pd.to_datetime([<span class="string">'04-01-2012 10:00'</span>], dayfirst=<span class="keyword">True</span>)</div><div class="line">pd.to_datetime([<span class="string">'2009/07/31'</span>, <span class="string">'asd'</span>], errors=<span class="string">'raise'</span>) <span class="comment"># ValueError: Unknown string format</span></div><div class="line">pd.to_datetime([<span class="string">'2009/07/31'</span>, <span class="string">'asd'</span>], errors=<span class="string">'ignore'</span>) <span class="comment"># return original input</span></div><div class="line">pd.to_datetime([<span class="string">'2009/07/31'</span>, <span class="string">'asd'</span>], errors=<span class="string">'coerce'</span>) <span class="comment"># Return NaT</span></div><div class="line"></div><div class="line"><span class="comment"># Epoch Timestamps</span></div><div class="line">pd.to_datetime([<span class="number">1</span>, <span class="number">3.14</span>], unit=<span class="string">'s'</span>) <span class="comment"># 以s计算</span></div><div class="line">&gt;&gt;&gt;DatetimeIndex([<span class="string">'1970-01-01 00:00:01'</span>, <span class="string">'1970-01-01 00:00:03.140000'</span>], dtype=<span class="string">'datetime64[ns]'</span>, freq=<span class="keyword">None</span>)</div><div class="line"></div><div class="line">start = datetime(<span class="number">2011</span>, <span class="number">1</span>, <span class="number">1</span>)</div><div class="line">end = datetime(<span class="number">2012</span>, <span class="number">1</span>, <span class="number">1</span>)</div><div class="line">rng = pd.date_range(start, end)</div><div class="line">rng = pd.bdate_range(start, end) <span class="comment"># business day</span></div><div class="line">pd.date_range(start, end, freq=<span class="string">'BM'</span>)</div><div class="line"><span class="comment"># freq http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases</span></div><div class="line">pd.bdate_range(end=end, periods=<span class="number">20</span>)</div></pre></td></tr></table></figure>
+<h3 id="DatetimeIndex"><a href="#DatetimeIndex" class="headerlink" title="DatetimeIndex"></a>DatetimeIndex</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># DatetimeIndex</span></div><div class="line">rng = pd.date_range(start, end, freq=<span class="string">'BM'</span>)</div><div class="line">ts = pd.Series(np.random.randn(len(rng)), index=rng)</div><div class="line">ts[<span class="string">'10/31/2011'</span>:<span class="string">'12/31/2011'</span>] <span class="comment"># 取出之间的数据</span></div><div class="line">ts[<span class="string">'2011'</span>] <span class="comment"># 取出2011年全年数据</span></div><div class="line">dft = pd.DataFrame(randn(<span class="number">100000</span>,<span class="number">1</span>), columns=[<span class="string">'A'</span>], index=pd.date_range(<span class="string">'20130101'</span>,periods=<span class="number">100000</span>,freq=<span class="string">'T'</span>))</div><div class="line">dft[datetime(<span class="number">2013</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">12</span>, <span class="number">0</span>):datetime(<span class="number">2013</span>, <span class="number">2</span>, <span class="number">28</span>, <span class="number">10</span>, <span class="number">12</span>, <span class="number">0</span>)]</div><div class="line"></div><div class="line"><span class="comment"># Truncating &amp; Fancy Indexing</span></div><div class="line">ts.truncate(before=<span class="string">'10/31/2011'</span>, after=<span class="string">'12/31/2011'</span>)</div></pre></td></tr></table></figure>
+<h3 id="DateOffset"><a href="#DateOffset" class="headerlink" title="DateOffset"></a>DateOffset</h3><h1 id="DataFrame类"><a href="#DataFrame类" class="headerlink" title="DataFrame类"></a>DataFrame类</h1><p>|创建<code>dataframe</code>对象。<a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame" target="_blank" rel="external">doc</a><br>|<code>class pandas.DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)</code><br>|<code>df = DataFrame(data=d, index=index)</code></p>
 <table>
 <thead>
 <tr>
@@ -826,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#I-O"><span class="nav-number">1.</span> <span class="nav-text">I/O</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-read-csv"><span class="nav-number">1.1.</span> <span class="nav-text">pandas.read_csv</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内建函数"><span class="nav-number">2.</span> <span class="nav-text">内建函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-date-range"><span class="nav-number">2.1.</span> <span class="nav-text">pandas.date_range</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-to-datetime"><span class="nav-number">2.2.</span> <span class="nav-text">pandas.to_datetime</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DataFrame类"><span class="nav-number">3.</span> <span class="nav-text">DataFrame类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Series类"><span class="nav-number">4.</span> <span class="nav-text">Series类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IO-Tools"><span class="nav-number">1.</span> <span class="nav-text">IO Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Flat-File"><span class="nav-number">1.1.</span> <span class="nav-text">Flat File</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Time-Series"><span class="nav-number">2.</span> <span class="nav-text">Time Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Timestamps"><span class="nav-number">2.1.</span> <span class="nav-text">Timestamps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DatetimeIndex"><span class="nav-number">2.2.</span> <span class="nav-text">DatetimeIndex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DateOffset"><span class="nav-number">2.3.</span> <span class="nav-text">DateOffset</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DataFrame类"><span class="nav-number"></span> <span class="nav-text">DataFrame类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Series类"><span class="nav-number"></span> <span class="nav-text">Series类</span></a></div>
             
 
           </div>
