@@ -419,7 +419,7 @@
 <figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">I get 10 times more traffic from [Google] [1] than from</div><div class="line">[Yahoo] [2] or [MSN] [3].</div><div class="line">[<span class="symbol">1</span>]: <span class="link">http://google.com/        "Google"</span></div><div class="line">[<span class="symbol">2</span>]: <span class="link">http://search.yahoo.com/  "Yahoo Search"</span></div><div class="line">[<span class="symbol">3</span>]: <span class="link">http://search.msn.com/    "MSN Search"</span></div></pre></td></tr></table></figure>
 <p><code>&lt;http://example.com/&gt;</code> 尖括号包起来会自动把它转成链接。</p>
 <h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>Markdown 使用星号（<em>）作为标记强调字词的符号，被 </em> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 * 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="emphasis">*single asterisks*</span>  # &lt;/em&gt; 斜体</div><div class="line"><span class="strong">**double asterisks**</span>  # &lt;/strong&gt; 加粗</div></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="emphasis">*single asterisks*</span>  # <span class="xml"><span class="tag">&lt;/<span class="name">em</span>&gt;</span></span> 斜体</div><div class="line"><span class="strong">**double asterisks**</span>  # <span class="xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span> 加粗</div></pre></td></tr></table></figure>
 <p>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\<span class="emphasis">*this text is surrounded by literal asterisks\*</span></div></pre></td></tr></table></figure>
 <p>删除线，使用~~</p>
@@ -561,7 +561,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
