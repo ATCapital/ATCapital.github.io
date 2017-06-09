@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://suplandz.github.io/"/>
-  <updated>2017-06-06T09:46:54.870Z</updated>
+  <updated>2017-06-09T14:22:53.093Z</updated>
   <id>https://suplandz.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阿里云上手记</title>
+    <link href="https://suplandz.github.io/2017/06/08/ubuntu/"/>
+    <id>https://suplandz.github.io/2017/06/08/ubuntu/</id>
+    <published>2017-06-07T16:00:00.000Z</published>
+    <updated>2017-06-09T14:22:53.093Z</updated>
+    
+    <content type="html"><![CDATA[<p>折腾了2天的阿里云，查阅了很多网上的资料，很多资料早已过时，现重新整理了下，让后人少走弯路。<br>目标：<br>Ubuntu 16.04图形界面<br>VNC连接<br><a id="more"></a><br>阿里云购买的是学生版本，9.9每月。预装系统里没有Ubuntu，可以随便选一个。购买完成后，打开管理控制台，选择云服务器ECS-实例，停止实例。停止后点击更多-更换系统盘，选择Ubuntu 16.04 64位版本。</p>
+<p>系统的选择：CentOS 属于Redhat系列，主打稳定，维护时间长。Ubuntu系列软件新，更新快，维护时间短，两者都属于Linux下。windows server 也装过，但感觉带不动。其实考虑到实际情况，基本不需要这么长的维护时间，更何况我只是用来跑跑代码，所以Ubuntu是最好的选择。</p>
+<p>网页上安装好系统盘后，下载连接主机的软件。</p>
+<p>windows上通过PuTTY控制，<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="external">PuTTY下载</a>。<br>安装好后再session处输入阿里云的外网ip即可，用root帐户登录。</p>
+<p>首先更新软件库：<br>sudo apt-get update<br>sudo apt-get upgrade<br>可以发现阿里云的下行速度还是很快的，几乎没有限制，上行速度限制为1M。</p>
+<p>安装桌面环境，Unity和相关软件。<br>云主机上安装的是Ubuntu的Server版本，所以没有图形界面。<br>sudo apt-get install ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal</p>
+<p>安装VNC server<br>sudo apt-get install vnc4server</p>
+<p>然后运行<br>vncserver :1<br>输入连接需要的密码</p>
+<p>配置成功后先修改阿里云实例安全组的规则，在实例-管理-本实例安全组-配置规则中修改，把5900等端口添加上去，这样才能用VNC连接，否则不成功。</p>
+<p>随后使用VNC viewer连接，判断连接是否正常。成功连上去后发现屏幕是灰的。这时我们需要修改vnc的配置，用于解决灰屏等现象。</p>
+<p>打开配置文件<br>vim ~/.vnc/xstartup<br>修改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line"></div><div class="line"># Uncomment the following two lines for normal desktop:</div><div class="line"># unset SESSION_MANAGER</div><div class="line"># exec /etc/X11/xinit/xinitrc</div><div class="line"></div><div class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup</div><div class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources</div><div class="line">xsetroot -solid grey</div><div class="line">vncconfig -iconic &amp;</div><div class="line">x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;</div><div class="line">x-window-manager &amp;</div><div class="line"></div><div class="line">gnome-panel &amp;</div><div class="line">gnome-settings-daemon &amp;</div><div class="line">metacity &amp;</div><div class="line">nautilus &amp;</div></pre></td></tr></table></figure></p>
+<p>保存退出<br>执行<br>vncserver :1<br>这里的：1如果不填的话，系统会自动分配一个端口。想要关闭端口执行：<br>vncserver -kill :1</p>
+<p>再次连接就OK了~</p>
+<p>通过非root账号也要修改对应的配置文件。<br>adduser lfn<br>adduser lfn sudo # 加入sudo组<br>su lfn #切换到lfn帐户</p>
+<p>有个小问题就是通过非root账号连接时application栏会消失，执行以下命令：<br>sudo -i<br>apt-get update<br>apt-get upgrade</p>
+<p>至此VNC连接完全搞定。<br>设置VNC开机启动<br>vim crontab<br>添加此句至末尾<br>@reboot /usr/bin/vncserver :1<br>搞定。</p>
+<p>安装eclipse<br>sudo apt-get install eclipse<br>安装PyDev,因为ecl是3.8的版本，所以只能装4.x的pydev<br>Help - Install New Software<br>work with：<br><a href="http://www.pydev.org/update_sites/4.5.5" target="_blank" rel="external">http://www.pydev.org/update_sites/4.5.5</a><br>选择PyDev即可。</p>
+<p><a href="https://www.linode.com/docs/applications/remote-desktop/install-vnc-on-ubuntu-16-04" target="_blank" rel="external">VNC</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;折腾了2天的阿里云，查阅了很多网上的资料，很多资料早已过时，现重新整理了下，让后人少走弯路。&lt;br&gt;目标：&lt;br&gt;Ubuntu 16.04图形界面&lt;br&gt;VNC连接&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Ubuntu" scheme="https://suplandz.github.io/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>使用python发送QQ邮件</title>

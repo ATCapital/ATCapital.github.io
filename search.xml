@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[阿里云上手记]]></title>
+    <url>%2F2017%2F06%2F08%2Fubuntu%2F</url>
+    <content type="text"><![CDATA[折腾了2天的阿里云，查阅了很多网上的资料，很多资料早已过时，现重新整理了下，让后人少走弯路。目标：Ubuntu 16.04图形界面VNC连接阿里云购买的是学生版本，9.9每月。预装系统里没有Ubuntu，可以随便选一个。购买完成后，打开管理控制台，选择云服务器ECS-实例，停止实例。停止后点击更多-更换系统盘，选择Ubuntu 16.04 64位版本。 系统的选择：CentOS 属于Redhat系列，主打稳定，维护时间长。Ubuntu系列软件新，更新快，维护时间短，两者都属于Linux下。windows server 也装过，但感觉带不动。其实考虑到实际情况，基本不需要这么长的维护时间，更何况我只是用来跑跑代码，所以Ubuntu是最好的选择。 网页上安装好系统盘后，下载连接主机的软件。 windows上通过PuTTY控制，PuTTY下载。安装好后再session处输入阿里云的外网ip即可，用root帐户登录。 首先更新软件库：sudo apt-get updatesudo apt-get upgrade可以发现阿里云的下行速度还是很快的，几乎没有限制，上行速度限制为1M。 安装桌面环境，Unity和相关软件。云主机上安装的是Ubuntu的Server版本，所以没有图形界面。sudo apt-get install ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal 安装VNC serversudo apt-get install vnc4server 然后运行vncserver :1输入连接需要的密码 配置成功后先修改阿里云实例安全组的规则，在实例-管理-本实例安全组-配置规则中修改，把5900等端口添加上去，这样才能用VNC连接，否则不成功。 随后使用VNC viewer连接，判断连接是否正常。成功连上去后发现屏幕是灰的。这时我们需要修改vnc的配置，用于解决灰屏等现象。 打开配置文件vim ~/.vnc/xstartup修改为1234567891011121314151617#!/bin/sh# Uncomment the following two lines for normal desktop:# unset SESSION_MANAGER# exec /etc/X11/xinit/xinitrc[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresourcesxsetroot -solid greyvncconfig -iconic &amp;x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;x-window-manager &amp;gnome-panel &amp;gnome-settings-daemon &amp;metacity &amp;nautilus &amp; 保存退出执行vncserver :1这里的：1如果不填的话，系统会自动分配一个端口。想要关闭端口执行：vncserver -kill :1 再次连接就OK了~ 通过非root账号也要修改对应的配置文件。adduser lfnadduser lfn sudo # 加入sudo组su lfn #切换到lfn帐户 有个小问题就是通过非root账号连接时application栏会消失，执行以下命令：sudo -iapt-get updateapt-get upgrade 至此VNC连接完全搞定。设置VNC开机启动vim crontab添加此句至末尾@reboot /usr/bin/vncserver :1搞定。 安装eclipsesudo apt-get install eclipse安装PyDev,因为ecl是3.8的版本，所以只能装4.x的pydevHelp - Install New Softwarework with：http://www.pydev.org/update_sites/4.5.5选择PyDev即可。 VNC]]></content>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用python发送QQ邮件]]></title>
     <url>%2F2017%2F06%2F06%2Fpython-email%2F</url>
     <content type="text"><![CDATA[只掌握皮毛的自动发邮件提醒功能。 12345678910111213141516171819202122# -*- coding: utf-8 -*-import smtplibfrom email.mime.text import MIMEText_user = "自己的QQ邮箱"_pwd = "授权码"_to = "他人的QQ邮箱"msg = MIMEText("测试")msg["Subject"] = "这是测试邮件"msg["From"] = _usermsg["To"] = _totry: s = smtplib.SMTP_SSL("smtp.qq.com", 465) s.login(_user, _pwd) s.sendmail(_user, _to, msg.as_string()) s.quit() print "Success!"except smtplib.SMTPException, e: print "Falied,%s" % e]]></content>
